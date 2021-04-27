@@ -1,0 +1,85 @@
+/* General Nav Styles */
+
+.nav {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-wrapper {
+  width: 100%;
+  max-width: 2560px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 25px;
+}
+
+.nav-icon {
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu {
+  width: 40%;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-menu li {
+  display: flex;
+  align-items: center;
+}
+
+/* Nav Button Normal + Hover Effects */
+
+.nav-button {
+  width: fit-content;
+  height: 30px;
+  font-size: 1rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  position: relative;
+  color: white;
+  transition: color 200ms ease-in-out;
+}
+
+.nav-button::after {
+  content: "";
+  position: absolute;
+  background-color: #fd586e;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  transition: all 200ms ease-in-out;
+}
+
+.nav-button:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.nav-button:hover {
+  color: #fd586e;
+}
+
+/* Resume Nav Button */
+
+.nav-resume-button {
+  width: 100px;
+  height: 30px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1rem;
+  background-color: #fd586e;
+  border-radius: 10px;
+  color: #294050;
+  font-weight: 700;
+}
