@@ -13,16 +13,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 25px;
+  padding: 0px 30px;
 }
 
 .nav-icon {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .nav-menu {
   width: 40%;
+  min-width: 450px;
+  max-width: 700px;
   list-style: none;
   display: flex;
   justify-content: space-between;
@@ -47,6 +50,13 @@
   position: relative;
   color: white;
   transition: color 200ms ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-button svg {
+  padding: 0px 4px;
 }
 
 .nav-button::after {
@@ -78,8 +88,22 @@
   outline: none;
   cursor: pointer;
   font-size: 1rem;
-  background-color: #fd586e;
-  border-radius: 10px;
-  color: #294050;
-  font-weight: 700;
+  background-color: transparent;
+  border: #fd586e 1px solid;
+  border-radius: 5px;
+  color: #fd586e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 200ms ease-in-out;
+}
+
+.nav-resume-button svg {
+  padding-right: 3px;
+  padding-top: -5px;
+}
+
+.nav-resume-button:hover {
+  background-color: #dc4d60;
+  color: white;
 }
