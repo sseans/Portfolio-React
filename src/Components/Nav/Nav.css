@@ -20,12 +20,30 @@
   display: flex;
   align-items: center;
   cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+  transition: all 200ms ease-in-out;
+}
+
+.nav-icon:hover {
+  color: #fd586e;
+}
+
+.nav-icon:hover span {
+  color: white;
+}
+
+.nav-icon span {
+  color: #fd586e;
+  font-size: 1rem;
+  transition: all 200ms ease-in-out;
 }
 
 .nav-menu {
   width: 40%;
-  min-width: 450px;
-  max-width: 700px;
+  min-width: 350px;
+  max-width: 450px;
   list-style: none;
   display: flex;
   justify-content: space-between;
@@ -42,7 +60,7 @@
 .nav-button {
   width: fit-content;
   height: 30px;
-  font-size: 1rem;
+  font-size: 0.9rem;
   outline: none;
   border: none;
   cursor: pointer;
@@ -62,10 +80,10 @@
 .nav-button::after {
   content: "";
   position: absolute;
-  background-color: #fd586e;
+  background-color: transparent;
   bottom: 0;
   left: 50%;
-  width: 0;
+  width: 0%;
   height: 2px;
   transition: all 200ms ease-in-out;
 }
@@ -73,6 +91,7 @@
 .nav-button:hover::after {
   width: 100%;
   left: 0;
+  background-color: #fd586e;
 }
 
 .nav-button:hover {
@@ -82,25 +101,22 @@
 /* Resume Nav Button */
 
 .nav-resume-button {
-  width: 100px;
-  height: 30px;
+  width: 90px;
+  height: 22px;
   border: none;
   outline: none;
   cursor: pointer;
-  font-size: 1rem;
   background-color: transparent;
   border: #fd586e 1px solid;
   border-radius: 5px;
-  color: #fd586e;
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 200ms ease-in-out;
-}
-
-.nav-resume-button svg {
-  padding-right: 3px;
-  padding-top: -5px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 700;
 }
 
 .nav-resume-button:hover {
