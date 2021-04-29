@@ -120,6 +120,17 @@
 }
 
 .nav-resume-button:hover {
-  background-color: #dc4d60;
+  background-color: #fd586e;
   color: white;
+}
+
+/* Mobile Nav Menu Items */
+
+.nav-mobile-menu {
+}
+
+.nav-mobile-button {
+}
+
+.nav-mobile-resume-button {
 }
