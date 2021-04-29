@@ -53,35 +53,40 @@ export default function Nav() {
           SEAN<span>/</span>S.
         </div>
         {mobileMenuActive === true ? (
-          <div className="nav-mobile-menu-container">
+          <>
             <div
-              className="nav-movile-menu-hamburger"
+              className="nav-mobile-menu-hamburger"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-              <span></span>
-              <span></span>
-              <span></span>
+              <div className="span"></div>
+              <div className="span"></div>
+              <div className="span"></div>
             </div>
-            <ul
-              className={
-                mobileMenuOpen ? "nav-mobile-menu active" : "nav-mobile-menu"
-              }
-            >
-              {menuItems.map((x) => {
-                return (
-                  <li key={x.title}>
-                    <button className={x.mobClassName}>{x.title}</button>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
+            <div className="nav-mobile-menu-container">
+              <ul
+                className={
+                  mobileMenuOpen ? "nav-mobile-menu active" : "nav-mobile-menu"
+                }
+              >
+                {menuItems.map((x) => {
+                  return (
+                    <li key={x.title}>
+                      <button className={x.mobClassName}>{x.title}</button>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </>
         ) : (
           <ul className="nav-menu">
             {menuItems.map((x) => {
               return (
                 <li key={x.title}>
-                  <button className={x.className}>{x.title}</button>
+                  <button className={x.className}>
+                    {x.className === "nav-resume-button" ? x.icon : null}
+                    {x.title}
+                  </button>
                 </li>
               );
             })}

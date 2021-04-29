@@ -116,7 +116,7 @@
   justify-content: center;
   transition: all 200ms ease-in-out;
   text-transform: uppercase;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 700;
 }
 
@@ -128,15 +128,45 @@
 /* Mobile Nav Menu Items */
 
 .nav-mobile-menu-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 35%;
+  height: 100vh;
 }
 
 .nav-mobile-menu {
+  list-style: none;
+  height: 100%;
+  width: 100%;
+  border: purple 1px solid;
+  transform: translateX(100%);
+  transition: all 200ms cubic-bezier(0.68, 0.16, 0.74, 1.38);
+}
+
+.nav-mobile-menu.active {
+  transform: translateX(0);
 }
 
 .nav-mobile-menu-hamburger {
+  position: absolute;
+  z-index: 99;
+  top: 10px;
+  right: 50%;
+  width: fit-content;
+  cursor: pointer;
+  border: 1px solid yellow;
 }
 
-.nav-mobile-menu-hamburger span {
+.span {
+  margin: 3px 0;
+  width: 25px;
+  height: 2px;
+  background-color: black;
+}
+
+.nav-mobile-menu-hamburger :nth-child(2) {
+  transform: translateX(-7px);
 }
 
 .nav-mobile-button {
