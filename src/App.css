@@ -14,12 +14,55 @@ html,
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #294050;
+  background-color: #0d1f2d;
   color: #fd586e;
-  font-size: 2rem;
   font-family: "Montserrat", sans-serif;
+  height: 100vh;
+  overflow-x: hidden;
 }
 
 .App {
   text-align: center;
+  position: relative;
+  height: 100%;
+}
+
+.App::before {
+  content: "";
+  width: 90%;
+  height: 3000px;
+  background-color: #ece7dc;
+  position: absolute;
+  z-index: -99;
+  top: -700px;
+  left: 60%;
+  transform: rotate(-20deg);
+}
+
+@media screen and (max-width: 900px) {
+  .App::before {
+    content: "";
+    width: 800px;
+    height: 3000px;
+    background-color: #ece7dc;
+    position: absolute;
+    z-index: -99;
+    top: -700px;
+    left: 60%;
+    transform: rotate(-10deg);
+  }
+}
+
+@media screen and (max-width: 615px) {
+  .App::before {
+    content: "";
+    width: 800px;
+    height: 3000px;
+    background-color: #ece7dc;
+    position: absolute;
+    z-index: -99;
+    top: -700px;
+    left: 80%;
+    transform: rotate(-10deg);
+  }
 }

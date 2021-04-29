@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import useWindowDimensions from "../../Hooks/useWindowDimensions";
 import "./Nav.css";
 import { MdWork } from "react-icons/md";
 import { HiCode } from "react-icons/hi";
@@ -8,21 +9,21 @@ import { HiDocumentText } from "react-icons/hi";
 const menuItems = [
   {
     icon: <HiCode />,
-    title: "Skills",
+    title: "Skills.",
     link: "/skills",
     className: "nav-button",
     mobClassName: "nav-mobile-button",
   },
   {
     icon: <FaProjectDiagram />,
-    title: "Projects",
+    title: "Projects.",
     link: "/projects",
     className: "nav-button",
     mobClassName: "nav-mobile-button",
   },
   {
     icon: <MdWork />,
-    title: "Experience",
+    title: "Experience.",
     link: "/experience",
     className: "nav-button",
     mobClassName: "nav-mobile-button",
@@ -38,6 +39,12 @@ const menuItems = [
 
 export default function Nav() {
   const [mobileMenuActive, setMobileMenuActive] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { width } = useWindowDimensions();
+
+  useEffect(() => {
+    width <= 900 ? setMobileMenuActive(true) : setMobileMenuActive(false);
+  }, [width]);
 
   return (
     <div className="nav">
@@ -46,20 +53,34 @@ export default function Nav() {
           SEAN<span>/</span>S.
         </div>
         {mobileMenuActive === true ? (
-          <ul className="nav-mobile-menu">
-            {menuItems.map((x) => {
-              return (
-                <li>
-                  <button className={x.mobClassName}>{x.title}</button>
-                </li>
-              );
-            })}
-          </ul>
+          <div className="nav-mobile-menu-container">
+            <div
+              className="nav-movile-menu-hamburger"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <ul
+              className={
+                mobileMenuOpen ? "nav-mobile-menu active" : "nav-mobile-menu"
+              }
+            >
+              {menuItems.map((x) => {
+                return (
+                  <li key={x.title}>
+                    <button className={x.mobClassName}>{x.title}</button>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
         ) : (
           <ul className="nav-menu">
             {menuItems.map((x) => {
               return (
-                <li>
+                <li key={x.title}>
                   <button className={x.className}>{x.title}</button>
                 </li>
               );

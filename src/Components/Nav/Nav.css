@@ -66,7 +66,8 @@
   cursor: pointer;
   background-color: transparent;
   position: relative;
-  color: white;
+  color: #0d1f2d;
+  font-weight: 700;
   transition: color 200ms ease-in-out;
   display: flex;
   align-items: center;
@@ -106,10 +107,10 @@
   border: none;
   outline: none;
   cursor: pointer;
-  background-color: transparent;
+  background-color: #fd586e;
   border: #fd586e 1px solid;
-  border-radius: 5px;
-  color: white;
+  border-radius: 4px;
+  color: #0d1f2d;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -126,7 +127,16 @@
 
 /* Mobile Nav Menu Items */
 
+.nav-mobile-menu-container {
+}
+
 .nav-mobile-menu {
+}
+
+.nav-mobile-menu-hamburger {
+}
+
+.nav-mobile-menu-hamburger span {
 }
 
 .nav-mobile-button {
