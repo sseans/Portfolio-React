@@ -5,6 +5,8 @@ import { MdWork } from "react-icons/md";
 import { HiCode } from "react-icons/hi";
 import { FaProjectDiagram } from "react-icons/fa";
 import { HiDocumentText } from "react-icons/hi";
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 
 const menuItems = [
   {
@@ -52,6 +54,10 @@ export default function Nav() {
         <div className="nav-icon">
           SEAN<span>/</span>S.
         </div>
+        <div className="nav-icons-div">
+          <FaGithub />
+          <FaLinkedin />
+        </div>
         {mobileMenuActive === true ? (
           <>
             <div
@@ -71,7 +77,7 @@ export default function Nav() {
                 {menuItems.map((x) => {
                   return (
                     <li key={x.title}>
-                      <button className={x.mobClassName}>{x.title}</button>
+                      <button className={x.className}>{x.title}</button>
                     </li>
                   );
                 })}
