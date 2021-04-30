@@ -51,12 +51,14 @@ export default function Nav() {
   return (
     <div className="nav">
       <div className="nav-wrapper">
-        <div className="nav-icon">
-          SEAN<span>/</span>S.
-        </div>
-        <div className="nav-icons-div">
-          <FaGithub />
-          <FaLinkedin />
+        <div className="nav-icons">
+          <div className="nav-icon">
+            SEAN<span>/</span>S.
+          </div>
+          <div className="nav-icons-div">
+            <FaGithub />
+            <FaLinkedin />
+          </div>
         </div>
         {mobileMenuActive === true ? (
           <>
@@ -77,7 +79,7 @@ export default function Nav() {
                 {menuItems.map((x) => {
                   return (
                     <li key={x.title}>
-                      <button className={x.className}>{x.title}</button>
+                      <button className={x.mobClassName}>{x.title}</button>
                     </li>
                   );
                 })}

@@ -26,7 +26,6 @@ body {
 .App {
   text-align: center;
   position: relative;
-  border: yellow 1px solid;
 }
 
 .App::before {
