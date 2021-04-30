@@ -7,6 +7,7 @@ import { FaProjectDiagram } from "react-icons/fa";
 import { HiDocumentText } from "react-icons/hi";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const menuItems = [
   {
