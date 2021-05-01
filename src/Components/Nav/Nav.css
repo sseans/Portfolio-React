@@ -136,7 +136,7 @@
   background-color: #fd586e;
   border: #fd586e 1px solid;
   border-radius: 4px;
-  color: #0d1f2d;
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -148,7 +148,7 @@
 
 .nav-resume-button:hover {
   background-color: #fd586e;
-  color: white;
+  color: #0d1f2d;
 }
 
 /* Mobile Nav Menu Items */
@@ -174,6 +174,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 22.5vh 0 22.5vh 0;
+  position: relative;
 }
 
 .nav-mobile-menu.active {
@@ -264,10 +265,10 @@
   content: "";
   position: absolute;
   z-index: -1;
-  top: 0;
+  top: 50%;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 0;
   opacity: 0;
   background: rgb(9, 21, 30);
   background: linear-gradient(
@@ -280,6 +281,8 @@
 
 .nav-mobile-button:hover::before {
   opacity: 100%;
+  height: 100%;
+  top: 0;
 }
 
 .nav-mobile-resume-button {
@@ -291,8 +294,15 @@
   cursor: pointer;
   font-size: 1.2rem;
   color: #fd586e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  border: yellow 1px solid;
+}
+
+.nav-mobile-resume-button svg {
+  margin-right: 2px;
+  margin-bottom: 2px;
 }
 
 .nav-mobile-resume-button::after {
@@ -301,7 +311,7 @@
   z-index: -1;
   top: 0;
   left: 0;
-  width: 5px;
+  width: 100%;
   height: 100%;
   opacity: 0;
   background-color: #fd586e;

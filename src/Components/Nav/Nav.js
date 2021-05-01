@@ -77,10 +77,16 @@ export default function Nav() {
                   mobileMenuOpen ? "nav-mobile-menu active" : "nav-mobile-menu"
                 }
               >
+                <div className="nav-mobile-menu-contact"></div>
                 {menuItems.map((x) => {
                   return (
                     <li key={x.title}>
-                      <button className={x.mobClassName}>{x.title}</button>
+                      <button className={x.mobClassName}>
+                        {x.mobClassName === "nav-mobile-resume-button"
+                          ? x.icon
+                          : null}
+                        {x.title}
+                      </button>
                     </li>
                   );
                 })}
