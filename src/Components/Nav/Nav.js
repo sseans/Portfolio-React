@@ -9,6 +9,7 @@ import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import { motion, useAnimation } from "framer-motion";
+import useLockScroll from "../../Hooks/useLockScroll";
 
 const menuItems = [
   {
@@ -43,7 +44,7 @@ const menuItems = [
 
 const animationVariants = {
   inactive: { x: 320, opacity: 0 },
-  active: { x: 35, opacity: 100 },
+  active: { x: 50, opacity: 100 },
 };
 
 export default function Nav() {
@@ -59,6 +60,12 @@ export default function Nav() {
   // Mobile Navbar Animation to select the variant
   const controls = useAnimation();
   controls.start(mobileMenuOpen === true ? "active" : "inactive");
+
+  // Locks scroll when menu is open
+  const scrollLockFunction = useLockScroll(mobileMenuOpen);
+  useEffect(() => {
+    scrollLockFunction();
+  }, [mobileMenuOpen]);
 
   return (
     <div className="nav">
