@@ -157,6 +157,7 @@
 
 .nav-mobile-menu-container {
   position: absolute;
+  z-index: 2;
   top: 0;
   right: 0;
   width: 35%;
@@ -372,4 +373,23 @@
 .nav-mobile-menu-contact svg {
   margin-right: 2px;
   margin-bottom: 1px;
+}
+
+/* Nav mobile menu backdrop */
+
+.nav-mobile-menu-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 2;
+  background-color: #000000;
+  opacity: 0.5;
+  /* Lets see if this blur works */
+  -webkit-filter: url("#blur");
+  filter: url("#blur");
+  -webkit-filter: blur(5px);
+  filter: blur(4px);
+  background-size: cover;
 }

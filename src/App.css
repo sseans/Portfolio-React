@@ -8,15 +8,13 @@
 
 html {
   /* overflow-y: hidden; */
-  /* overflow-x: hidden; */
-  border: darkorange 1px solid;
+  overflow-x: hidden;
 }
 
 html,
 body,
 #root {
   height: 100%;
-  border: turquoise 1px solid;
 }
 
 body {
@@ -25,13 +23,13 @@ body {
   background-color: #0d1f2d;
   color: #fd586e;
   font-family: "Montserrat", sans-serif;
-  border: red 1px solid;
 }
 
 .App {
   text-align: center;
   position: relative;
-  border: khaki 1px dashed;
+  z-index: 1;
+  overflow-x: hidden;
   /* overflow-x: hidden; */
   height: 100%;
 }

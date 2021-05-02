@@ -44,7 +44,7 @@ const menuItems = [
 
 const animationVariants = {
   inactive: { x: 320, opacity: 0 },
-  active: { x: 50, opacity: 100 },
+  active: { x: 35, opacity: 100 },
 };
 
 export default function Nav() {
@@ -82,6 +82,13 @@ export default function Nav() {
         {mobileMenuActive === true ? (
           // Mobile Menu
           <>
+            {mobileMenuOpen === true ? (
+              <div
+                className="nav-mobile-menu-backdrop"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              ></div>
+            ) : null}
+
             {/* Hamburger Icon */}
             <div
               className={

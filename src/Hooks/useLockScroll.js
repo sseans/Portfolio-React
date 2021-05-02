@@ -1,20 +1,20 @@
 // import { useState, useEffect } from "react";
 
-export default function useLockScroll(lockStatus) {
+export default function useLockScroll(lockStatus, appRef) {
   const scrollWidth = window.innerWidth - document.body.offsetWidth;
+
+  //   document.getElementsByClassName("App")[0].
+
   function lock() {
     if (lockStatus === true) {
-      console.log(`window.innerWidth`, window.innerWidth);
-      console.log(`document.body.offsetWidth`, document.body.offsetWidth);
-      document.body.style.overflow = "hidden";
-      document.body.style.overflowX = "unset";
-
-      //   document.body.style.height = window.innerHeight;
+      //   document.body.style.overflowY = "hidden";
       //   document.body.style.paddingRight = `${scrollWidth}px`;
+      document.getElementsByClassName("App")[0].style.overflowY = "hidden";
+      document.body.style.overflowY = "scroll";
     } else if (lockStatus === false) {
-      document.body.style.overflow = "unset";
-      document.body.style.overflowX = "hidden";
-      //   document.body.style.height = "100%";
+      //   document.body.style.overflowY = "unset";
+      document.getElementsByClassName("App")[0].style.overflowY = "auto";
+      document.body.style.overflowY = "unset";
       //   document.body.style.paddingRight = "0px";
     }
   }
