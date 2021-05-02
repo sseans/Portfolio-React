@@ -8,7 +8,7 @@ import { HiDocumentText } from "react-icons/hi";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 
 const menuItems = [
   {
@@ -41,6 +41,11 @@ const menuItems = [
   },
 ];
 
+const animationVariants = {
+  inactive: { x: 320, opacity: 0 },
+  active: { x: 30, opacity: 100 },
+};
+
 export default function Nav() {
   const [mobileMenuActive, setMobileMenuActive] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -49,6 +54,9 @@ export default function Nav() {
   useEffect(() => {
     width <= 900 ? setMobileMenuActive(true) : setMobileMenuActive(false);
   }, [width]);
+
+  const controls = useAnimation();
+  controls.start(mobileMenuOpen === true ? "active" : "inactive");
 
   return (
     <div className="nav">
@@ -73,8 +81,9 @@ export default function Nav() {
               <div className="span"></div>
             </div>
             <motion.div
-              animate={{ x: 10 }}
-              initial={{ x: 200 }}
+              variants={animationVariants}
+              animate={controls}
+              initial={{ opacity: 0 }}
               className="nav-mobile-menu-container"
             >
               <ul className="nav-mobile-menu">
