@@ -49,12 +49,14 @@ const animationVariants = {
 export default function Nav() {
   const [mobileMenuActive, setMobileMenuActive] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { width } = useWindowDimensions();
 
+  // Determines size of screen and which menu to show (Uses Custom Hook)
+  const { width } = useWindowDimensions();
   useEffect(() => {
     width <= 900 ? setMobileMenuActive(true) : setMobileMenuActive(false);
   }, [width]);
 
+  // Mobile Navbar Animation to select the variant
   const controls = useAnimation();
   controls.start(mobileMenuOpen === true ? "active" : "inactive");
 
@@ -71,7 +73,9 @@ export default function Nav() {
           </div>
         </div>
         {mobileMenuActive === true ? (
+          // Mobile Menu
           <>
+            {/* Hamburger Icon */}
             <div
               className={
                 mobileMenuOpen === true
@@ -84,6 +88,7 @@ export default function Nav() {
               <div className="span"></div>
               <div className="span"></div>
             </div>
+            {/* Slide Out Mobile Menu */}
             <motion.div
               variants={animationVariants}
               animate={controls}
@@ -111,6 +116,7 @@ export default function Nav() {
             </motion.div>
           </>
         ) : (
+          // Desktop Menu
           <ul className="nav-menu">
             {menuItems.map((x) => {
               return (

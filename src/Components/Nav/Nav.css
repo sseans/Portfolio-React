@@ -174,7 +174,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 22.5vh 35px 22.5vh 0;
+  padding: 22.5vh 35px 28vh 0;
   position: relative;
 }
 
@@ -188,7 +188,7 @@
 .nav-mobile-menu-hamburger {
   position: absolute;
   z-index: 99;
-  top: 34px;
+  top: 31px;
   right: 35px;
   width: fit-content;
   cursor: pointer;
@@ -223,7 +223,7 @@
 }
 
 .nav-mobile-menu-hamburger.active :nth-child(1) {
-  transform: rotate(-45deg) translateY(7px);
+  transform: rotate(-45deg) translateY(8px);
 }
 
 .nav-mobile-menu-hamburger.active :nth-child(2) {
@@ -232,13 +232,13 @@
 }
 
 .nav-mobile-menu-hamburger.active :nth-child(3) {
-  transform: rotate(45deg) translateY(-7px);
+  transform: rotate(45deg) translateY(-8px);
 }
 
 .span {
   margin: 3px 0;
   width: 25px;
-  height: 2px;
+  height: 3px;
   background-color: #0d1f2d;
   transition: all 200ms ease-in-out;
 }

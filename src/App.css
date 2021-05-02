@@ -43,6 +43,7 @@ body {
   left: 60%;
   transform: rotate(-20deg);
   overflow-y: hidden;
+  transition: all 200ms ease-in;
 }
 
 @media screen and (max-width: 900px) {
