@@ -43,7 +43,7 @@ const menuItems = [
 
 const animationVariants = {
   inactive: { x: 320, opacity: 0 },
-  active: { x: 30, opacity: 100 },
+  active: { x: 35, opacity: 100 },
 };
 
 export default function Nav() {
@@ -73,7 +73,11 @@ export default function Nav() {
         {mobileMenuActive === true ? (
           <>
             <div
-              className="nav-mobile-menu-hamburger"
+              className={
+                mobileMenuOpen === true
+                  ? "nav-mobile-menu-hamburger active"
+                  : "nav-mobile-menu-hamburger"
+              }
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               <div className="span"></div>
