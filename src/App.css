@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-y: hidden;
+}
+
 body,
 html,
 .App,
@@ -38,6 +42,7 @@ body {
   top: -700px;
   left: 60%;
   transform: rotate(-20deg);
+  overflow-y: hidden;
 }
 
 @media screen and (max-width: 900px) {
@@ -53,5 +58,21 @@ body {
     width: 800px;
     left: 80%;
     transform: rotate(-10deg);
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .App::before {
+    width: 800px;
+    left: 78%;
+    transform: rotate(-7.5deg);
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .App::before {
+    width: 800px;
+    left: 76%;
+    transform: rotate(-5deg);
   }
 }

@@ -18,6 +18,8 @@
 
 .nav-icons {
   display: flex;
+  position: relative;
+  z-index: 99;
 }
 
 .nav-icon {
@@ -31,7 +33,7 @@
 }
 
 .nav-icons-div {
-  margin-left: 10px;
+  margin-left: 6px;
   display: flex;
   align-items: center;
 }
@@ -41,7 +43,7 @@
 }
 
 .nav-icons-div svg {
-  margin-left: 15px;
+  margin-left: 10px;
   font-size: 1.2rem;
   color: white;
   cursor: pointer;
@@ -158,6 +160,7 @@
   top: 0;
   right: 0;
   width: 35%;
+  min-width: 200px;
   height: 100vh;
 }
 
@@ -189,6 +192,7 @@
   right: 35px;
   width: fit-content;
   cursor: pointer;
+  padding: 5px;
   transition: all 300ms ease-in-out;
 }
 
@@ -208,6 +212,8 @@
   transform: translateX(-3px);
 }
 
+/* hamburger bar animations when menu is active */
+
 .nav-mobile-menu-hamburger.active .span {
   background-color: #fff;
 }
@@ -217,7 +223,7 @@
 }
 
 .nav-mobile-menu-hamburger.active :nth-child(1) {
-  transform: rotate(-45deg) translateY(6px);
+  transform: rotate(-45deg) translateY(7px);
 }
 
 .nav-mobile-menu-hamburger.active :nth-child(2) {
@@ -226,7 +232,7 @@
 }
 
 .nav-mobile-menu-hamburger.active :nth-child(3) {
-  transform: rotate(45deg) translateY(-6px);
+  transform: rotate(45deg) translateY(-7px);
 }
 
 .span {
@@ -240,6 +246,8 @@
 .nav-mobile-menu-hamburger :nth-child(2) {
   transform: translateX(-7px);
 }
+
+/* nav mobile menu buttons */
 
 .nav-mobile-button {
   width: 100%;
