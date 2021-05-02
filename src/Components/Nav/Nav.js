@@ -7,6 +7,7 @@ import { FaProjectDiagram } from "react-icons/fa";
 import { HiDocumentText } from "react-icons/hi";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
+import { IoMdMail } from "react-icons/io";
 import { motion } from "framer-motion";
 
 const menuItems = [
@@ -71,13 +72,16 @@ export default function Nav() {
               <div className="span"></div>
               <div className="span"></div>
             </div>
-            <div className="nav-mobile-menu-container">
-              <ul
-                className={
-                  mobileMenuOpen ? "nav-mobile-menu active" : "nav-mobile-menu"
-                }
-              >
-                <div className="nav-mobile-menu-contact"></div>
+            <motion.div
+              animate={{ x: 10 }}
+              initial={{ x: 200 }}
+              className="nav-mobile-menu-container"
+            >
+              <ul className="nav-mobile-menu">
+                <div className="nav-mobile-menu-contact">
+                  <IoMdMail />
+                  Contact me!
+                </div>
                 {menuItems.map((x) => {
                   return (
                     <li key={x.title}>
@@ -91,7 +95,7 @@ export default function Nav() {
                   );
                 })}
               </ul>
-            </div>
+            </motion.div>
           </>
         ) : (
           <ul className="nav-menu">
