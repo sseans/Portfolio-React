@@ -23,7 +23,7 @@ export default function useScrollDirection() {
         setScrollDirection("up");
       }
       setPrevScroll(scrollY);
-    }, 200);
+    }, 100);
   }
 
   useEffect(() => {
