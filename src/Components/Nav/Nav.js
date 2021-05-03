@@ -86,7 +86,6 @@ export default function Nav({ appRef }) {
             <PopDownNav
               openMenu={setMobileMenuOpen}
               statusOpenMenu={mobileMenuOpen}
-              appRef={appRef}
             />
             {mobileMenuOpen === true ? (
               <div

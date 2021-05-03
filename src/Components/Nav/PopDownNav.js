@@ -1,24 +1,15 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./PopDownNav.css";
 import { motion, useAnimation } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
+import useScrollDirection from "../../Hooks/useScrollDirection";
 
-export default function PopDownNav({ openMenu, statusOpenMenu, appRef }) {
-  const [prevScrollPos, setPrevScrollPos] = useState(0);
-
-  console.log(`appRef`, appRef);
-
-  function handleScroll() {
-    const currentScrollPos = appRef[0].pageYOffset;
-    console.log(currentScrollPos);
-    console.log(`appRef`, appRef);
-  }
-
+export default function PopDownNav({ openMenu, statusOpenMenu }) {
+  const scrollD = useScrollDirection();
   useEffect(() => {
-    console.log(`appRef`, appRef);
-    // appRef.scrollTo(0, 0);
-  }, [statusOpenMenu]);
+    console.log(`scrollD`, scrollD);
+  }, [scrollD]);
 
   return (
     <motion.div className="drop-nav">
