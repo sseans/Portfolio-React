@@ -10,6 +10,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import { motion, useAnimation } from "framer-motion";
 import useLockScroll from "../../Hooks/useLockScroll";
+import PopDownNav from "./PopDownNav";
 
 const menuItems = [
   {
@@ -47,7 +48,7 @@ const animationVariants = {
   active: { x: 35, opacity: 100 },
 };
 
-export default function Nav() {
+export default function Nav({ appRef }) {
   const [mobileMenuActive, setMobileMenuActive] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -82,6 +83,11 @@ export default function Nav() {
         {mobileMenuActive === true ? (
           // Mobile Menu
           <>
+            <PopDownNav
+              openMenu={setMobileMenuOpen}
+              statusOpenMenu={mobileMenuOpen}
+              appRef={appRef}
+            />
             {mobileMenuOpen === true ? (
               <div
                 className="nav-mobile-menu-backdrop"

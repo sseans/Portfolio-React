@@ -1,0 +1,132 @@
+.drop-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+}
+
+.drop-nav-wrapper {
+  width: 100%;
+  max-width: 2560px;
+  display: flex;
+  align-items: center;
+  padding: 0px 30px;
+  justify-content: space-between;
+}
+
+.drop-nav-icons {
+  display: flex;
+  position: relative;
+  z-index: 99;
+}
+
+.drop-nav-icon {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+  transition: all 200ms ease-in-out;
+}
+
+.drop-nav-icon:hover {
+  color: #fd586e;
+}
+
+.drop-nav-icon:hover span {
+  color: white;
+}
+
+.drop-nav-icon span {
+  color: #fd586e;
+  font-size: 1rem;
+  transition: all 200ms ease-in-out;
+}
+
+.drop-nav-icons-div {
+  margin-left: 6px;
+  display: flex;
+  align-items: center;
+}
+
+.drop-nav-icons-div :nth-child(2) {
+  font-size: 1.25rem;
+}
+
+.drop-nav-icons-div svg {
+  margin-left: 10px;
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+.drop-nav-icons-div svg:hover {
+  color: #fd586e;
+}
+
+.drop-nav-mobile-menu-hamburger {
+  position: absolute;
+  z-index: 99;
+  top: 31px;
+  right: 35px;
+  width: fit-content;
+  cursor: pointer;
+  padding: 5px;
+  transition: all 300ms ease-in-out;
+}
+
+.drop-nav-mobile-menu-hamburger:hover div {
+  background-color: #fd586e;
+}
+
+.drop-nav-mobile-menu-hamburger:hover :nth-child(1) {
+  transform: translateX(-3px);
+}
+
+.drop-nav-mobile-menu-hamburger:hover :nth-child(2) {
+  transform: translateX(3px);
+}
+
+.drop-nav-mobile-menu-hamburger:hover :nth-child(3) {
+  transform: translateX(-3px);
+}
+
+/* hamburger bar animations when menu is active */
+
+.drop-nav-mobile-menu-hamburger.active .drop-span {
+  background-color: #fff;
+}
+
+.drop-nav-mobile-menu-hamburger.active:hover .drop-span {
+  background-color: #fd586e;
+}
+
+.drop-nav-mobile-menu-hamburger.active :nth-child(1) {
+  transform: rotate(-45deg) translateY(8px);
+}
+
+.drop-nav-mobile-menu-hamburger.active :nth-child(2) {
+  transform: translateX(-5x);
+  opacity: 0;
+}
+
+.drop-nav-mobile-menu-hamburger.active :nth-child(3) {
+  transform: rotate(45deg) translateY(-8px);
+}
+
+.drop-nav-mobile-menu-hamburger :nth-child(2) {
+  transform: translateX(-7px);
+}
+
+.drop-span {
+  margin: 3px 0;
+  width: 25px;
+  height: 3px;
+  background-color: #0d1f2d;
+  transition: all 200ms ease-in-out;
+}
