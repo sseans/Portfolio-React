@@ -8,7 +8,7 @@ import useScrollDirection from "../../Hooks/useScrollDirection";
 const animationVariants = {
   active: { y: 0, opacity: 90 },
   inactive: { y: -70, opacity: 0 },
-  instantInactive: { y: -10, opacity: 0, transition: { duration: 0.1 } },
+  instantInactive: { opacity: 0, transition: { duration: 0.1 } },
 };
 
 export default function PopDownNav({
