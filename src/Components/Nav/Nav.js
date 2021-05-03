@@ -48,19 +48,31 @@ const animationVariants = {
   active: { x: 35, opacity: 100 },
 };
 
+const navAnimationVariants = {
+  inactive: { opacity: 0 },
+  active: { opacity: 100 },
+};
+
 export default function Nav({ appRef }) {
   const [mobileMenuActive, setMobileMenuActive] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [dropDownState, setDropDownState] = useState(false);
 
   // Determines size of screen and which menu to show (Uses Custom Hook)
   const { width } = useWindowDimensions();
   useEffect(() => {
     width <= 900 ? setMobileMenuActive(true) : setMobileMenuActive(false);
+    if (width >= 900) {
+      setDropDownState(false);
+    }
   }, [width]);
 
   // Mobile Navbar Animation to select the variant
   const controls = useAnimation();
   controls.start(mobileMenuOpen === true ? "active" : "inactive");
+
+  const mainNavControls = useAnimation();
+  mainNavControls.start(dropDownState === true ? "inactive" : "active");
 
   // Locks scroll when menu is open
   const scrollLockFunction = useLockScroll(mobileMenuOpen);
@@ -71,7 +83,12 @@ export default function Nav({ appRef }) {
   return (
     <div className="nav">
       <div className="nav-wrapper">
-        <div className="nav-icons">
+        <motion.div
+          animate={mainNavControls}
+          initial="active"
+          variants={navAnimationVariants}
+          className="nav-icons"
+        >
           <div className="nav-icon">
             SEAN<span>/</span>S.
           </div>
@@ -79,13 +96,15 @@ export default function Nav({ appRef }) {
             <FaGithub />
             <FaLinkedin />
           </div>
-        </div>
+        </motion.div>
         {mobileMenuActive === true ? (
           // Mobile Menu
           <>
             <PopDownNav
               openMenu={setMobileMenuOpen}
               statusOpenMenu={mobileMenuOpen}
+              dropDownState={dropDownState}
+              setDropDownState={setDropDownState}
             />
             {mobileMenuOpen === true ? (
               <div

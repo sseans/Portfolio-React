@@ -15,7 +15,7 @@ export default function useScrollDirection() {
       // do something
       let scrollY = app.scrollTop;
 
-      if (scrollY === 0) {
+      if (scrollY === 0 || scrollY < 55) {
         setScrollDirection(null);
       } else if (scrollY > prevScroll) {
         setScrollDirection("down");

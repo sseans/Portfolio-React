@@ -6,14 +6,17 @@ import { FaLinkedin } from "react-icons/fa";
 import useScrollDirection from "../../Hooks/useScrollDirection";
 
 const animationVariants = {
-  active: { y: 0, opacity: 100 },
-  inactive: { y: -50, opacity: 0 },
-  instantInactive: { y: 0, opacity: 0 },
+  active: { y: 0, opacity: 90 },
+  inactive: { y: -70, opacity: 0 },
+  instantInactive: { y: -10, opacity: 0, transition: { duration: 0.1 } },
 };
 
-export default function PopDownNav({ openMenu, statusOpenMenu }) {
-  const [dropDownState, setDropDownState] = useState(false);
-
+export default function PopDownNav({
+  openMenu,
+  statusOpenMenu,
+  dropDownState,
+  setDropDownState,
+}) {
   const scrollD = useScrollDirection();
   useEffect(() => {
     console.log(`scrollD`, scrollD);
