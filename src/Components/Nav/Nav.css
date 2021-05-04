@@ -142,7 +142,7 @@
   outline: none;
   cursor: pointer;
   background-color: #fd586e;
-  border: #fd586e 1px solid;
+  /* border: #fd586e 1px solid; */
   border-radius: 4px;
   color: white;
   display: flex;
@@ -152,11 +152,19 @@
   text-transform: uppercase;
   font-size: 0.8rem;
   font-weight: 700;
+  background: rgb(253, 88, 110);
+  background: linear-gradient(
+    90deg,
+    rgba(253, 88, 110, 1) 0%,
+    rgba(94, 43, 255, 1) 100%
+  );
+  /* -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
 }
 
 .nav-resume-button:hover {
   background-color: #fd586e;
-  color: #0d1f2d;
+  color: #d3d3d3;
 }
 
 /* Mobile Nav Menu Items */
@@ -356,6 +364,12 @@
   width: 100%;
   opacity: 100%;
   background-color: #fd586e;
+  background: rgb(253, 88, 110);
+  background: linear-gradient(
+    90deg,
+    rgba(253, 88, 110, 1) 0%,
+    rgba(94, 43, 255, 1) 100%
+  );
 }
 
 .nav-mobile-resume-button:hover {

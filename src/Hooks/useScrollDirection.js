@@ -9,7 +9,7 @@ export default function useScrollDirection() {
   function calcScroll() {
     let scrollY = app.scrollTop;
 
-    if (scrollY === 0 || scrollY < 10) {
+    if (scrollY === 0 || scrollY < 55) {
       setScrollDirection(null);
     } else if (scrollY > prevScroll) {
       setScrollDirection("down");
