@@ -6,13 +6,13 @@ function App() {
   // const [refState, setRefState] = useState(null)
   const appRef = useRef(0);
 
-  useEffect(() => {
-    appRef.current.scrollTo = () => {};
-  }, [appRef]);
+  // useEffect(() => {
+  //   appRef.current.scrollTo = () => {};
+  // }, [appRef]);
 
   return (
     <div className="App" ref={appRef}>
-      <Nav />
+      <Nav appRef={appRef} />
       <div className="tempcontent">boop</div>
     </div>
   );

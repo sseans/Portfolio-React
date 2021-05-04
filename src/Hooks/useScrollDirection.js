@@ -6,24 +6,17 @@ export default function useScrollDirection() {
 
   const app = document.getElementsByClassName("App")[0];
 
-  let timer = null;
   function calcScroll() {
-    if (timer !== null) {
-      clearTimeout(timer);
-    }
-    timer = setTimeout(function () {
-      // do something
-      let scrollY = app.scrollTop;
+    let scrollY = app.scrollTop;
 
-      if (scrollY === 0 || scrollY < 58) {
-        setScrollDirection(null);
-      } else if (scrollY > prevScroll) {
-        setScrollDirection("down");
-      } else if (scrollY < prevScroll) {
-        setScrollDirection("up");
-      }
-      setPrevScroll(scrollY);
-    }, 100);
+    if (scrollY === 0 || scrollY < 10) {
+      setScrollDirection(null);
+    } else if (scrollY > prevScroll) {
+      setScrollDirection("down");
+    } else if (scrollY < prevScroll) {
+      setScrollDirection("up");
+    }
+    setPrevScroll(scrollY);
   }
 
   useEffect(() => {

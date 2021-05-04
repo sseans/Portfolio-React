@@ -16,21 +16,21 @@ const menuItems = [
   {
     icon: <HiCode />,
     title: "Skills.",
-    link: "/skills",
+    scroll: "150",
     className: "nav-button",
     mobClassName: "nav-mobile-button",
   },
   {
     icon: <FaProjectDiagram />,
     title: "Projects.",
-    link: "/projects",
+    scroll: "500",
     className: "nav-button",
     mobClassName: "nav-mobile-button",
   },
   {
     icon: <MdWork />,
     title: "Experience.",
-    link: "/experience",
+    scroll: "900",
     className: "nav-button",
     mobClassName: "nav-mobile-button",
   },
@@ -49,8 +49,8 @@ const animationVariants = {
 };
 
 const navAnimationVariants = {
+  active: { opacity: 1 },
   inactive: { opacity: 0 },
-  active: { opacity: 100 },
 };
 
 export default function Nav({ appRef }) {
@@ -80,6 +80,10 @@ export default function Nav({ appRef }) {
     scrollLockFunction();
   }, [mobileMenuOpen]);
 
+  // useEffect(() => {
+  //   setReference(appRef.current !== 0 ? appRef.current : null);
+  // }, [appRef.current]);
+
   return (
     <div className="nav">
       <div className="nav-wrapper">
@@ -89,22 +93,40 @@ export default function Nav({ appRef }) {
           variants={navAnimationVariants}
           className="nav-icons"
         >
-          <div className="nav-icon">
+          <div
+            onClick={() => (appRef.current.scrollTop = 0)}
+            className="nav-icon"
+          >
             SEAN<span>/</span>S.
           </div>
           <div className="nav-icons-div">
-            <FaGithub />
-            <FaLinkedin />
+            <a
+              style={{ display: "table-cell" }}
+              href="https://github.com/sseans"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaGithub />
+            </a>
+            <a
+              style={{ display: "table-cell" }}
+              href="https://www.linkedin.com/in/sean-seale-ab07691a9/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaLinkedin />
+            </a>
           </div>
         </motion.div>
+        {/* // Mobile Menu */}
         {mobileMenuActive === true ? (
-          // Mobile Menu
           <>
             <PopDownNav
               openMenu={setMobileMenuOpen}
               statusOpenMenu={mobileMenuOpen}
               dropDownState={dropDownState}
               setDropDownState={setDropDownState}
+              scrollToTop={() => (appRef.current.scrollTop = 0)}
             />
             {mobileMenuOpen === true ? (
               <div
@@ -141,7 +163,16 @@ export default function Nav({ appRef }) {
                 {menuItems.map((x) => {
                   return (
                     <li key={x.title}>
-                      <button className={x.mobClassName}>
+                      <button
+                        onClick={() => {
+                          appRef.current.scrollTop = x.scroll;
+                          setTimeout(() => {
+                            setMobileMenuOpen(!mobileMenuOpen);
+                            setDropDownState("stay");
+                          }, 200);
+                        }}
+                        className={x.mobClassName}
+                      >
                         {x.mobClassName === "nav-mobile-resume-button"
                           ? x.icon
                           : null}
@@ -159,7 +190,10 @@ export default function Nav({ appRef }) {
             {menuItems.map((x) => {
               return (
                 <li key={x.title}>
-                  <button className={x.className}>
+                  <button
+                    onClick={() => (appRef.current.scrollTop = x.scroll)}
+                    className={x.className}
+                  >
                     {x.className === "nav-resume-button" ? x.icon : null}
                     {x.title}
                   </button>

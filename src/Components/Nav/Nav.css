@@ -19,7 +19,7 @@
 .nav-icons {
   display: flex;
   position: relative;
-  z-index: 99;
+  z-index: 100;
 }
 
 .nav-icon {

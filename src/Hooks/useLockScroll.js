@@ -10,11 +10,11 @@ export default function useLockScroll(lockStatus, appRef) {
       //   document.body.style.overflowY = "hidden";
       //   document.body.style.paddingRight = `${scrollWidth}px`;
       document.getElementsByClassName("App")[0].style.overflowY = "hidden";
-      //   document.body.style.overflowY = "hidden";
+      document.body.style.overflowY = "scroll";
     } else if (lockStatus === false) {
       //   document.body.style.overflowY = "unset";
       document.getElementsByClassName("App")[0].style.overflowY = "unset";
-      //   document.body.style.overflowY = "unset";
+      document.body.style.overflowY = "unset";
       //   document.body.style.paddingRight = "0px";
     }
   }

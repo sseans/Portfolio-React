@@ -8,7 +8,8 @@ import useScrollDirection from "../../Hooks/useScrollDirection";
 const animationVariants = {
   active: { y: 0, opacity: 90 },
   inactive: { y: -70, opacity: 0 },
-  instantInactive: { opacity: 0, transition: { duration: 0.1 } },
+  instantInactive: { opacity: 0, transition: { duration: 0.3 } },
+  stay: { y: 0, opacity: 90 },
 };
 
 export default function PopDownNav({
@@ -16,14 +17,18 @@ export default function PopDownNav({
   statusOpenMenu,
   dropDownState,
   setDropDownState,
+  scrollToTop,
 }) {
   const scrollD = useScrollDirection();
   useEffect(() => {
-    console.log(`scrollD`, scrollD);
     if (scrollD === null) {
       setDropDownState(null);
+    } else if (statusOpenMenu === true) {
+      setDropDownState(true);
     } else if (scrollD === "up") {
       setDropDownState(true);
+    } else if (scrollD === "down" && dropDownState === "stay") {
+      setDropDownState(null);
     } else if (scrollD === "down") {
       setDropDownState(false);
     }
@@ -37,10 +42,10 @@ export default function PopDownNav({
       ? "inactive"
       : dropDownState === null
       ? "instantInactive"
+      : dropDownState === "stay"
+      ? "stay"
       : null
   );
-
-  useEffect(() => {}, [dropDownState]);
 
   return (
     <motion.div
@@ -51,7 +56,15 @@ export default function PopDownNav({
     >
       <div className="drop-nav-wrapper">
         <div className="drop-nav-icons">
-          <div className="drop-nav-icon">
+          <div
+            onClick={() => {
+              scrollToTop();
+              if (statusOpenMenu === true) {
+                openMenu(!statusOpenMenu);
+              }
+            }}
+            className="drop-nav-icon"
+          >
             SEAN<span>/</span>S.
           </div>
           <div className="drop-nav-icons-div">
