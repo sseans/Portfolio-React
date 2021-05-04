@@ -38,7 +38,13 @@
   align-items: center;
 }
 
-.nav-icons-div :nth-child(2) {
+.nav-icons-div a {
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-icons-div a :nth-child(2) {
   font-size: 1.25rem;
 }
 

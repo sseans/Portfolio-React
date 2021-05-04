@@ -68,8 +68,22 @@ export default function PopDownNav({
             SEAN<span>/</span>S.
           </div>
           <div className="drop-nav-icons-div">
-            <FaGithub />
-            <FaLinkedin />
+            <a
+              style={{ display: "table-cell" }}
+              href="https://github.com/sseans"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaGithub />
+            </a>
+            <a
+              style={{ display: "table-cell" }}
+              href="https://www.linkedin.com/in/sean-seale-ab07691a9/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaLinkedin />
+            </a>
           </div>
         </div>
 

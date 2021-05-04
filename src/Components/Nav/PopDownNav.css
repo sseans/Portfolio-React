@@ -54,7 +54,13 @@
   align-items: center;
 }
 
-.drop-nav-icons-div :nth-child(2) {
+.drop-nav-icons-div a {
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.drop-nav-icons-div a :nth-child(2) {
   font-size: 1.25rem;
 }
 

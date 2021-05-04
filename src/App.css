@@ -85,3 +85,17 @@ body {
   height: 2000px;
   width: 400px;
 }
+
+.loader {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader-backdrop {
+  width: 100%;
+  height: 100%;
+  background-color: #0d1f2d;
+}
