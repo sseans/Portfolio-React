@@ -37,7 +37,13 @@ function App() {
         </motion.div>
       ) : (
         <>
-          <Nav appRef={appRef} />
+          <motion.div
+            initial={{ y: -40, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            className="nav-animate-div"
+          >
+            <Nav appRef={appRef} />
+          </motion.div>
           <Hero />
           <div className="tempcontent">boop</div>
         </>
