@@ -177,7 +177,11 @@ export default function Nav({ appRef }) {
                 variants={animationVariants}
                 animate={controls}
                 initial={{ opacity: 0 }}
-                className="nav-mobile-menu-container"
+                className={
+                  dropDownState !== null
+                    ? "nav-mobile-menu-container"
+                    : "nav-mobile-menu-container glass"
+                }
               >
                 <ul className="nav-mobile-menu">
                   <div className="nav-mobile-menu-contact">
