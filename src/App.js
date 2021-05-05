@@ -4,6 +4,7 @@ import Nav from "./Components/Nav/Nav";
 import PropagateLoader from "react-spinners/PropagateLoader";
 import { motion } from "framer-motion";
 import Hero from "./Components/Hero/Hero";
+import useLockScroll from "./Hooks/useLockScroll";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -21,9 +22,14 @@ function App() {
     }, 2900);
   }, []);
 
+  const scrollWidth = useLockScroll(loading);
+
   return (
     <div
-      style={{ overflow: loading ? "hidden" : "" }}
+      style={{
+        overflow: loading ? "hidden" : "",
+        marginRight: `${scrollWidth}px`,
+      }}
       className="App"
       ref={appRef}
     >
