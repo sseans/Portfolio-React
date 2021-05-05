@@ -10,7 +10,6 @@ import { FaLinkedin } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import { motion, useAnimation } from "framer-motion";
 import useLockScroll from "../../Hooks/useLockScroll";
-import PopDownNav from "./PopDownNav";
 import useScrollDirection from "../../Hooks/useScrollDirection";
 
 const menuItems = [
@@ -67,13 +66,14 @@ export default function Nav({ appRef }) {
     width <= 900 ? setMobileMenuActive(true) : setMobileMenuActive(false);
   }, [width]);
 
-  // Mobile Navbar Animation to select the variant
+  // Mobile sidebar => selecting which animation variant
   const controls = useAnimation();
   controls.start(mobileMenuOpen === true ? "active" : "inactive");
 
   // Locks scroll when menu is open
   useLockScroll(mobileMenuOpen);
 
+  // Determines scroll direction => If scrollD changes? sets (NavbarDropDown) state
   const scrollD = useScrollDirection();
   useEffect(() => {
     if (scrollD === null) {
@@ -87,8 +87,9 @@ export default function Nav({ appRef }) {
     } else if (scrollD === "down") {
       setDropDownState(false);
     }
-  }, [scrollD]);
+  }, [scrollD]); // eslint-disable-line react-hooks/exhaustive-deps
 
+  // Applies corresponding animation (NavbarDropDown) based off useEffect
   const navControls = useAnimation();
   navControls.start(
     dropDownState === true
@@ -151,14 +152,6 @@ export default function Nav({ appRef }) {
           {/* // Mobile Menu */}
           {mobileMenuActive === true ? (
             <>
-              {/* <PopDownNav
-              openMenu={setMobileMenuOpen}
-              statusOpenMenu={mobileMenuOpen}
-              dropDownState={dropDownState}
-              setDropDownState={setDropDownState}
-              scrollToTop={() => window.scrollTo(0, 0)}
-            /> */}
-
               {/* Hamburger Icon */}
               <div
                 className={

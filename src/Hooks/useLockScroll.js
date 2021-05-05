@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 export default function useLockScroll(lockStatus) {
   const scrollWidth = window.innerWidth - document.body.offsetWidth;

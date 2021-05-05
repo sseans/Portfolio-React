@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import Nav from "./Components/Nav/Nav";
 import PropagateLoader from "react-spinners/PropagateLoader";
-import { motion, useCycle } from "framer-motion";
+import { motion } from "framer-motion";
 import Hero from "./Components/Hero/Hero";
 
 function App() {
