@@ -24,7 +24,7 @@ export default function Hero() {
           animate={{ y: 0, opacity: 1, transition: { delay: 0.15 } }}
           className="hero-phrase"
         >
-          I'm a sydney based Frontend Developer.
+          I'm a Sydney based Frontend Developer.
         </motion.div>
         <motion.div
           initial={{ y: 30, opacity: 0 }}

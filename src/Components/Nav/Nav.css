@@ -6,7 +6,19 @@
   display: flex;
   justify-content: center;
   position: fixed;
-  z-index: 99;
+}
+
+.nav.glass {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  backdrop-filter: blur(6px);
+  /* background-size: cover; */
+
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.03), 0 0 6px 6px rgba(0, 0, 0, 0.02),
+    0 7px 7px rgba(0, 0, 0, 0.01), 0 8px 9px rgba(0, 0, 0, 0.01);
 }
 
 .nav-wrapper {
@@ -16,6 +28,12 @@
   align-items: center;
   padding: 0px 30px;
   justify-content: space-between;
+}
+
+.nav-left {
+  display: flex;
+  position: relative;
+  z-index: 3;
 }
 
 .nav-icons {
@@ -173,7 +191,7 @@
 
 .nav-mobile-menu-container {
   position: fixed;
-  z-index: 99;
+  z-index: 98;
   top: 0;
   right: 0;
   width: 35%;
@@ -405,7 +423,7 @@
   left: 0;
   height: 100vh;
   width: 100vw;
-  z-index: 2;
+  z-index: 0;
   background-color: transparent;
   opacity: 1;
   transition: all 200ms ease-in-out;
@@ -414,5 +432,5 @@
   backdrop-filter: url("#blur");
   -webkit-filter: blur(5px);
   backdrop-filter: blur(4px);
-  background-size: cover;
+  /* background-size: cover; */
 }

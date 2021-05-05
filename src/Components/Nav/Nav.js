@@ -51,9 +51,9 @@ const animationVariants = {
 
 const navAnimationVariants = {
   active: { y: 0, opacity: 1 },
-  inactive: { y: -120, opacity: 0 },
+  inactive: { y: -120, opacity: 1 },
   topPosition: { opacity: 1 },
-  stay: { y: 0, opacity: 0.9 },
+  stay: { y: 0, opacity: 1 },
 };
 
 export default function Nav({ appRef }) {
@@ -65,9 +65,6 @@ export default function Nav({ appRef }) {
   const { width } = useWindowDimensions();
   useEffect(() => {
     width <= 900 ? setMobileMenuActive(true) : setMobileMenuActive(false);
-    if (width >= 900) {
-      setDropDownState(false);
-    }
   }, [width]);
 
   // Mobile Navbar Animation to select the variant
@@ -78,8 +75,6 @@ export default function Nav({ appRef }) {
   useLockScroll(mobileMenuOpen);
 
   const scrollD = useScrollDirection();
-  console.log(`scrollD`, scrollD);
-
   useEffect(() => {
     if (scrollD === null) {
       setDropDownState(null);
@@ -108,121 +103,131 @@ export default function Nav({ appRef }) {
   );
 
   return (
-    <motion.div
-      variants={navAnimationVariants}
-      initial="inactive"
-      animate={navControls}
-      className="nav"
-    >
-      <div className="nav-wrapper">
-        <div>
-          <div onClick={() => window.scrollTo(0, 0)} className="nav-icon">
-            SEAN<span>/</span>S.
-          </div>
-          <div className="nav-icons-div">
-            <a
-              style={{ display: "table-cell" }}
-              href="https://github.com/sseans"
-              target="_blank"
-              rel="noopener noreferrer"
+    <>
+      {mobileMenuOpen === true ? (
+        <div
+          className="nav-mobile-menu-backdrop"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        ></div>
+      ) : null}
+      <motion.div
+        variants={navAnimationVariants}
+        initial="inactive"
+        animate={navControls}
+        className={dropDownState === null ? "nav" : "nav glass"}
+      >
+        <div className="nav-wrapper">
+          <div className="nav-left">
+            <div
+              onClick={() => {
+                if (mobileMenuOpen === true) {
+                  setMobileMenuOpen(!mobileMenuOpen);
+                }
+                window.scrollTo(0, 0);
+              }}
+              className="nav-icon"
             >
-              <FaGithub />
-            </a>
-            <a
-              style={{ display: "table-cell" }}
-              href="https://www.linkedin.com/in/sean-seale-ab07691a9/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaLinkedin />
-            </a>
+              SEAN<span>/</span>S.
+            </div>
+            <div className="nav-icons-div">
+              <a
+                style={{ display: "table-cell" }}
+                href="https://github.com/sseans"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaGithub />
+              </a>
+              <a
+                style={{ display: "table-cell" }}
+                href="https://www.linkedin.com/in/sean-seale-ab07691a9/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedin />
+              </a>
+            </div>
           </div>
-        </div>
-        {/* // Mobile Menu */}
-        {mobileMenuActive === true ? (
-          <>
-            {/* <PopDownNav
+          {/* // Mobile Menu */}
+          {mobileMenuActive === true ? (
+            <>
+              {/* <PopDownNav
               openMenu={setMobileMenuOpen}
               statusOpenMenu={mobileMenuOpen}
               dropDownState={dropDownState}
               setDropDownState={setDropDownState}
               scrollToTop={() => window.scrollTo(0, 0)}
             /> */}
-            {mobileMenuOpen === true ? (
-              <div
-                className="nav-mobile-menu-backdrop"
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              ></div>
-            ) : null}
 
-            {/* Hamburger Icon */}
-            <div
-              className={
-                mobileMenuOpen === true
-                  ? "nav-mobile-menu-hamburger active"
-                  : "nav-mobile-menu-hamburger"
-              }
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              <div className="span"></div>
-              <div className="span"></div>
-              <div className="span"></div>
-            </div>
-            {/* Slide Out Mobile Menu */}
-            <motion.div
-              variants={animationVariants}
-              animate={controls}
-              initial={{ opacity: 0 }}
-              className="nav-mobile-menu-container"
-            >
-              <ul className="nav-mobile-menu">
-                <div className="nav-mobile-menu-contact">
-                  <IoMdMail />
-                  Contact me!
-                </div>
-                {menuItems.map((x) => {
-                  return (
-                    <li key={x.title}>
-                      <button
-                        onClick={() => {
-                          window.scrollTo(0, x.scroll);
-                          setTimeout(() => {
-                            setMobileMenuOpen(!mobileMenuOpen);
+              {/* Hamburger Icon */}
+              <div
+                className={
+                  mobileMenuOpen === true
+                    ? "nav-mobile-menu-hamburger active"
+                    : "nav-mobile-menu-hamburger"
+                }
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              >
+                <div className="span"></div>
+                <div className="span"></div>
+                <div className="span"></div>
+              </div>
+              {/* Slide Out Mobile Menu */}
+              <motion.div
+                variants={animationVariants}
+                animate={controls}
+                initial={{ opacity: 0 }}
+                className="nav-mobile-menu-container"
+              >
+                <ul className="nav-mobile-menu">
+                  <div className="nav-mobile-menu-contact">
+                    <IoMdMail />
+                    Contact me!
+                  </div>
+                  {menuItems.map((x) => {
+                    return (
+                      <li key={x.title}>
+                        <button
+                          onClick={() => {
+                            window.scrollTo(0, x.scroll);
+                            setTimeout(() => {
+                              setMobileMenuOpen(!mobileMenuOpen);
+                            }, 200);
                             setDropDownState("stay");
-                          }, 200);
-                        }}
-                        className={x.mobClassName}
-                      >
-                        {x.mobClassName === "nav-mobile-resume-button"
-                          ? x.icon
-                          : null}
-                        {x.title}
-                      </button>
-                    </li>
-                  );
-                })}
-              </ul>
-            </motion.div>
-          </>
-        ) : (
-          // Desktop Menu
-          <ul className="nav-menu">
-            {menuItems.map((x) => {
-              return (
-                <li key={x.title}>
-                  <button
-                    onClick={() => window.scrollTo(0, x.scroll)}
-                    className={x.className}
-                  >
-                    {x.className === "nav-resume-button" ? x.icon : null}
-                    {x.title}
-                  </button>
-                </li>
-              );
-            })}
-          </ul>
-        )}
-      </div>
-    </motion.div>
+                          }}
+                          className={x.mobClassName}
+                        >
+                          {x.mobClassName === "nav-mobile-resume-button"
+                            ? x.icon
+                            : null}
+                          {x.title}
+                        </button>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </motion.div>
+            </>
+          ) : (
+            // Desktop Menu
+            <ul className="nav-menu">
+              {menuItems.map((x) => {
+                return (
+                  <li key={x.title}>
+                    <button
+                      onClick={() => window.scrollTo(0, x.scroll)}
+                      className={x.className}
+                    >
+                      {x.className === "nav-resume-button" ? x.icon : null}
+                      {x.title}
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
+        </div>
+      </motion.div>
+    </>
   );
 }
