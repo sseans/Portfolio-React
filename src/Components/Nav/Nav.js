@@ -50,14 +50,16 @@ const animationVariants = {
 };
 
 const navAnimationVariants = {
-  active: { opacity: 1 },
-  inactive: { opacity: 0 },
+  active: { y: 0, opacity: 1 },
+  inactive: { y: -120, opacity: 0 },
+  topPosition: { opacity: 1 },
+  stay: { y: 0, opacity: 0.9 },
 };
 
 export default function Nav({ appRef }) {
   const [mobileMenuActive, setMobileMenuActive] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [dropDownState, setDropDownState] = useState(false);
+  const [dropDownState, setDropDownState] = useState(true);
 
   // Determines size of screen and which menu to show (Uses Custom Hook)
   const { width } = useWindowDimensions();
@@ -72,21 +74,48 @@ export default function Nav({ appRef }) {
   const controls = useAnimation();
   controls.start(mobileMenuOpen === true ? "active" : "inactive");
 
-  const mainNavControls = useAnimation();
-  mainNavControls.start(dropDownState === true ? "inactive" : "active");
-
   // Locks scroll when menu is open
-  const scrollLockFunction = useLockScroll(mobileMenuOpen);
+  useLockScroll(mobileMenuOpen);
+
+  const scrollD = useScrollDirection();
+  console.log(`scrollD`, scrollD);
+
+  useEffect(() => {
+    if (scrollD === null) {
+      setDropDownState(null);
+    } else if (mobileMenuOpen === true) {
+      setDropDownState(true);
+    } else if (scrollD === "up") {
+      setDropDownState(true);
+    } else if (scrollD === "down" && dropDownState === "stay") {
+      setDropDownState(null);
+    } else if (scrollD === "down") {
+      setDropDownState(false);
+    }
+  }, [scrollD]);
+
+  const navControls = useAnimation();
+  navControls.start(
+    dropDownState === true
+      ? "active"
+      : dropDownState === false
+      ? "inactive"
+      : dropDownState === null
+      ? "topPosition"
+      : dropDownState === "stay"
+      ? "stay"
+      : null
+  );
 
   return (
-    <div className="nav">
+    <motion.div
+      variants={navAnimationVariants}
+      initial="inactive"
+      animate={navControls}
+      className="nav"
+    >
       <div className="nav-wrapper">
-        <motion.div
-          animate={mainNavControls}
-          initial="active"
-          variants={navAnimationVariants}
-          className="nav-icons"
-        >
+        <div>
           <div onClick={() => window.scrollTo(0, 0)} className="nav-icon">
             SEAN<span>/</span>S.
           </div>
@@ -108,17 +137,17 @@ export default function Nav({ appRef }) {
               <FaLinkedin />
             </a>
           </div>
-        </motion.div>
+        </div>
         {/* // Mobile Menu */}
         {mobileMenuActive === true ? (
           <>
-            <PopDownNav
+            {/* <PopDownNav
               openMenu={setMobileMenuOpen}
               statusOpenMenu={mobileMenuOpen}
               dropDownState={dropDownState}
               setDropDownState={setDropDownState}
               scrollToTop={() => window.scrollTo(0, 0)}
-            />
+            /> */}
             {mobileMenuOpen === true ? (
               <div
                 className="nav-mobile-menu-backdrop"
@@ -194,6 +223,6 @@ export default function Nav({ appRef }) {
           </ul>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 }

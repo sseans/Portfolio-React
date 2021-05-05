@@ -5,6 +5,8 @@
   height: 90px;
   display: flex;
   justify-content: center;
+  position: fixed;
+  z-index: 99;
 }
 
 .nav-wrapper {
