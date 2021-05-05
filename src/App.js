@@ -7,7 +7,12 @@ import Hero from "./Components/Hero/Hero";
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const appRef = useRef(0);
+  const [appReference, setAppReference] = useState();
+  const appRef = useRef();
+
+  useEffect(() => {
+    setAppReference(appRef);
+  }, []);
 
   useEffect(() => {
     setLoading(true);
@@ -17,7 +22,12 @@ function App() {
   }, []);
 
   return (
-    <div className="App" ref={appRef}>
+    <div
+      style={{ overflow: loading ? "hidden" : "" }}
+      className="App"
+      ref={appRef}
+    >
+      <div className="BG"></div>
       {loading ? (
         <motion.div
           initial={{ opacity: 100 }}
@@ -42,7 +52,7 @@ function App() {
             animate={{ y: 0, opacity: 1 }}
             className="nav-animate-div"
           >
-            <Nav appRef={appRef} />
+            <Nav appRef={appReference} />
           </motion.div>
           <Hero />
           <div className="tempcontent">boop</div>

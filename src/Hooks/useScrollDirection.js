@@ -4,10 +4,8 @@ export default function useScrollDirection() {
   const [scrollDirection, setScrollDirection] = useState(null);
   const [prevScroll, setPrevScroll] = useState(0);
 
-  const app = document.getElementsByClassName("App")[0];
-
   function calcScroll() {
-    let scrollY = app.scrollTop;
+    let scrollY = window.scrollY;
 
     if (scrollY === 0 || scrollY < 55) {
       setScrollDirection(null);
@@ -20,9 +18,9 @@ export default function useScrollDirection() {
   }
 
   useEffect(() => {
-    app.addEventListener("scroll", calcScroll);
+    window.addEventListener("scroll", calcScroll);
     return () => {
-      app.removeEventListener("scroll", calcScroll);
+      window.removeEventListener("scroll", calcScroll);
     };
   });
 

@@ -1,12 +1,22 @@
 .drop-nav {
   position: fixed;
-  z-index: 99;
+  z-index: 97;
   top: 0;
   left: 0;
   width: 100%;
   height: 90px;
   display: flex;
   justify-content: center;
+  opacity: 0.3;
+  /* Lets see if this blur works */
+  /* -webkit-backdrop-filter: url("#blur"); */
+  backdrop-filter: url("#blur");
+  /* -webkit-filter: blur(5px); */
+  backdrop-filter: blur(6px);
+  /* background-size: cover; */
+
+  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.03), 0 0 4px 4px rgba(0, 0, 0, 0.02),
+    0 6px 6px rgba(0, 0, 0, 0.01), 0 7px 8px rgba(0, 0, 0, 0.01);
 }
 
 .drop-nav-wrapper {

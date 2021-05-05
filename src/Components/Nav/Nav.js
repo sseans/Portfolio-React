@@ -11,6 +11,7 @@ import { IoMdMail } from "react-icons/io";
 import { motion, useAnimation } from "framer-motion";
 import useLockScroll from "../../Hooks/useLockScroll";
 import PopDownNav from "./PopDownNav";
+import useScrollDirection from "../../Hooks/useScrollDirection";
 
 const menuItems = [
   {
@@ -76,13 +77,6 @@ export default function Nav({ appRef }) {
 
   // Locks scroll when menu is open
   const scrollLockFunction = useLockScroll(mobileMenuOpen);
-  useEffect(() => {
-    scrollLockFunction();
-  }, [mobileMenuOpen]);
-
-  // useEffect(() => {
-  //   setReference(appRef.current !== 0 ? appRef.current : null);
-  // }, [appRef.current]);
 
   return (
     <div className="nav">
@@ -93,10 +87,7 @@ export default function Nav({ appRef }) {
           variants={navAnimationVariants}
           className="nav-icons"
         >
-          <div
-            onClick={() => (appRef.current.scrollTop = 0)}
-            className="nav-icon"
-          >
+          <div onClick={() => window.scrollTo(0, 0)} className="nav-icon">
             SEAN<span>/</span>S.
           </div>
           <div className="nav-icons-div">
@@ -126,7 +117,7 @@ export default function Nav({ appRef }) {
               statusOpenMenu={mobileMenuOpen}
               dropDownState={dropDownState}
               setDropDownState={setDropDownState}
-              scrollToTop={() => (appRef.current.scrollTop = 0)}
+              scrollToTop={() => window.scrollTo(0, 0)}
             />
             {mobileMenuOpen === true ? (
               <div
@@ -165,7 +156,7 @@ export default function Nav({ appRef }) {
                     <li key={x.title}>
                       <button
                         onClick={() => {
-                          appRef.current.scrollTop = x.scroll;
+                          window.scrollTo(0, x.scroll);
                           setTimeout(() => {
                             setMobileMenuOpen(!mobileMenuOpen);
                             setDropDownState("stay");
@@ -191,7 +182,7 @@ export default function Nav({ appRef }) {
               return (
                 <li key={x.title}>
                   <button
-                    onClick={() => (appRef.current.scrollTop = x.scroll)}
+                    onClick={() => window.scrollTo(0, x.scroll)}
                     className={x.className}
                   >
                     {x.className === "nav-resume-button" ? x.icon : null}

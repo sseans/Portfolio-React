@@ -7,8 +7,8 @@ import useScrollDirection from "../../Hooks/useScrollDirection";
 
 const animationVariants = {
   active: { y: 0, opacity: 90 },
-  inactive: { y: -70, opacity: 0 },
-  instantInactive: { opacity: 0, transition: { duration: 0.3 } },
+  inactive: { y: -120, opacity: 0 },
+  instantInactive: { opacity: 0, transition: { duration: 0.2 } },
   stay: { y: 0, opacity: 90 },
 };
 
@@ -20,6 +20,8 @@ export default function PopDownNav({
   scrollToTop,
 }) {
   const scrollD = useScrollDirection();
+  console.log(`scrollD`, scrollD);
+
   useEffect(() => {
     if (scrollD === null) {
       setDropDownState(null);

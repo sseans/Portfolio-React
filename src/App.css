@@ -8,14 +8,18 @@
 
 html {
   /* overflow-y: hidden; */
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
+}
+
+#root {
+  position: relative;
 }
 
 html,
 body,
 #root,
 .App {
-  height: 100%;
+  /* height: 100%; */
   scroll-behavior: smooth;
 }
 
@@ -25,6 +29,7 @@ body {
   background-color: #0d1f2d;
   color: #fd586e;
   font-family: "Montserrat", sans-serif;
+  height: 100%;
 }
 
 .App {
@@ -36,8 +41,7 @@ body {
   /* height: 100%; */
 }
 
-.App::before {
-  content: "";
+.BG {
   width: 90%;
   height: 3000px;
   background-color: #ece7dc;
@@ -50,7 +54,7 @@ body {
 }
 
 @media screen and (max-width: 900px) {
-  .App::before {
+  .BG {
     width: 800px;
     left: 60%;
     transform: rotate(-10deg);
@@ -58,7 +62,7 @@ body {
 }
 
 @media screen and (max-width: 615px) {
-  .App::before {
+  .BG {
     width: 800px;
     left: 80%;
     transform: rotate(-10deg);
@@ -66,7 +70,7 @@ body {
 }
 
 @media screen and (max-width: 430px) {
-  .App::before {
+  .BG {
     width: 800px;
     left: 78%;
     transform: rotate(-7.5deg);
@@ -74,7 +78,7 @@ body {
 }
 
 @media screen and (max-width: 380px) {
-  .App::before {
+  .BG {
     width: 800px;
     left: 76%;
     transform: rotate(-5deg);
