@@ -30,7 +30,7 @@ const animationVariants = {
     opacity: 0,
     transition: { type: "spring", duration: 0.25 },
   },
-  before: { x: 0, opacity: 100 },
+  before: { x: 0, opacity: 1 },
 };
 
 export default function Hero() {
@@ -68,7 +68,7 @@ export default function Hero() {
             animate={{ y: 0, opacity: 1, transition: { delay: 0.3 } }}
             className="hero-phrase"
           >
-            I'm a Sydney based Frontend Developer.
+            I'm a Frontend Developer.
           </motion.div>
           <motion.div
             initial={{ y: 30, opacity: 0 }}
@@ -78,6 +78,7 @@ export default function Hero() {
             I build unique UI implementaions, have a passion for software
             engineering and a strong drive to continue learning. Looking for a
             workplace that I can grow into, building upon my skills every day.
+            Based in Sydney!
           </motion.div>
           <motion.div
             initial={{ y: 30, opacity: 0 }}
@@ -89,7 +90,7 @@ export default function Hero() {
         </div>
         {mobileHero === true ? null : (
           <motion.div
-            initial="inactive"
+            initial={{ opacity: 0, x: -100 }}
             animate={controls}
             variants={animationVariants}
             className="hero-right"
@@ -101,7 +102,7 @@ export default function Hero() {
               }}
               animate={{
                 skew: 20,
-                height: 600,
+                height: 550,
                 transition: {
                   type: "tween",
                   delay: 0.7,
@@ -118,7 +119,7 @@ export default function Hero() {
               }}
               animate={{
                 skew: 20,
-                height: 600,
+                height: 550,
                 transition: { type: "tween", delay: 0.9 },
               }}
               className="hero-shape"
@@ -132,7 +133,7 @@ export default function Hero() {
               }}
               animate={{
                 skew: 20,
-                height: 600,
+                height: 550,
                 transition: { type: "tween", delay: 1.1 },
               }}
               className="hero-shape"
@@ -146,7 +147,7 @@ export default function Hero() {
               }}
               animate={{
                 skew: 20,
-                height: 600,
+                height: 550,
                 transition: { type: "tween", delay: 1.25 },
               }}
               className="hero-shape"
@@ -160,7 +161,7 @@ export default function Hero() {
               }}
               animate={{
                 skew: 20,
-                height: 600,
+                height: 550,
                 transition: { type: "tween", delay: 1.375 },
               }}
               className="hero-shape"
@@ -173,7 +174,7 @@ export default function Hero() {
               animate={{ opacity: 1, transition: { delay: 1.475 } }}
               className="hero-plus"
             >
-              <button onClick={() => setProfilePic(true)}>
+              <button>
                 <FaPlus />
               </button>
             </motion.div>
