@@ -61,6 +61,12 @@ body {
   }
 }
 
+@media screen and (min-width: 900px) {
+  html {
+    overflow-y: scroll;
+  }
+}
+
 @media screen and (max-width: 615px) {
   .BG {
     width: 800px;

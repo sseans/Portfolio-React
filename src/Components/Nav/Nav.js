@@ -63,7 +63,12 @@ export default function Nav({ appRef }) {
   // Determines size of screen and which menu to show (Uses Custom Hook)
   const { width } = useWindowDimensions();
   useEffect(() => {
-    width <= 900 ? setMobileMenuActive(true) : setMobileMenuActive(false);
+    if (width <= 900) {
+      setMobileMenuActive(true);
+    } else {
+      setMobileMenuActive(false);
+      setMobileMenuOpen(false);
+    }
   }, [width]);
 
   // Mobile sidebar => selecting which animation variant

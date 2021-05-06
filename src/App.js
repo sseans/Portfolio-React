@@ -5,10 +5,15 @@ import PropagateLoader from "react-spinners/PropagateLoader";
 import { motion } from "framer-motion";
 import Hero from "./Components/Hero/Hero";
 import useLockScroll from "./Hooks/useLockScroll";
+import useMarginJump from "./Hooks/useMarginJump";
+import useScrollDirection from "./Hooks/useScrollDirection";
 
 function App() {
+  // const [scrollW, setScrollW] = useState(useMarginJump());
+  // const scrollWidth = useRef(useMarginJump());
   const [loading, setLoading] = useState(true);
   const [appReference, setAppReference] = useState();
+  // const scrollWidth = useLockScroll(true);
   const appRef = useRef();
 
   useEffect(() => {
@@ -22,13 +27,19 @@ function App() {
     }, 2900);
   }, []);
 
-  const scrollWidth = useLockScroll(loading);
+  // useEffect(() => {
+  //   console.log(`scrollW inside effect`, scrollWidth.current);
+  // }, []);
+
+  // console.log(`scrollW`, scrollWidth.current);
+  // const scroll = useMarginJump();
+  // setScrollW(scroll);
 
   return (
     <div
       style={{
         overflow: loading ? "hidden" : "",
-        marginRight: `${scrollWidth}px`,
+        // marginRight: loading === true ? `${scrollWidth.current}px` : "0px",
       }}
       className="App"
       ref={appRef}
