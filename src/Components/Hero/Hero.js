@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import useWindowDimensions from "../../Hooks/useWindowDimensions";
 import "./Hero.css";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import { IoLogoJavascript, IoLogoCss3 } from "react-icons/io";
 import {
   FaReact,
@@ -33,17 +33,18 @@ const animationVariants = {
   before: { x: 0, opacity: 1 },
 };
 
+const skillsAnimation = {
+  hidden: { opacity: 0, x: 500 },
+  show: { opacity: 1, x: 15 },
+};
+
 export default function Hero() {
   const [mobileHero, setMobileHero] = useState(false);
-  const [profilePic, setProfilePic] = useState(false);
 
   const { width } = useWindowDimensions();
   useEffect(() => {
     width <= 900 ? setMobileHero(true) : setMobileHero(false);
   }, [width]);
-
-  const controls = useAnimation();
-  controls.start(profilePic === true ? "after" : "before");
 
   return (
     <div className="hero">
@@ -88,10 +89,23 @@ export default function Hero() {
             <button>Contact Me</button>
           </motion.div>
         </div>
-        {mobileHero === true ? null : (
+        {mobileHero === true ? (
+          <motion.div
+            initial="hidden"
+            animate="show"
+            variants={skillsAnimation}
+            className="hero-right-mobile"
+          >
+            {skillsGrid.map((x) => (
+              <motion.div key={x.skill} className="skill-grid">
+                {x.icon}
+              </motion.div>
+            ))}
+          </motion.div>
+        ) : (
           <motion.div
             initial={{ opacity: 0, x: -100 }}
-            animate={controls}
+            animate={{ x: 0, opacity: 1 }}
             variants={animationVariants}
             className="hero-right"
           >
@@ -174,7 +188,7 @@ export default function Hero() {
               animate={{ opacity: 1, transition: { delay: 1.475 } }}
               className="hero-plus"
             >
-              <button>
+              <button className="herobutton">
                 <FaPlus />
               </button>
             </motion.div>

@@ -6,11 +6,6 @@
   box-sizing: border-box;
 }
 
-html {
-  /* overflow-y: hidden; */
-  /* overflow-x: hidden; */
-}
-
 #root {
   position: relative;
 }
@@ -67,26 +62,26 @@ body {
   }
 }
 
-@media screen and (max-width: 615px) {
+@media screen and (max-width: 650px) {
   .BG {
     width: 800px;
-    left: 80%;
+    left: 67.5%;
     transform: rotate(-10deg);
   }
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 470px) {
   .BG {
     width: 800px;
-    left: 78%;
-    transform: rotate(-7.5deg);
+    left: 67.5%;
+    transform: rotate(-6.5deg);
   }
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 390px) {
   .BG {
     width: 800px;
-    left: 76%;
+    left: 67.5%;
     transform: rotate(-5deg);
   }
 }

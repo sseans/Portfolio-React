@@ -4,9 +4,6 @@ import Nav from "./Components/Nav/Nav";
 import PropagateLoader from "react-spinners/PropagateLoader";
 import { motion } from "framer-motion";
 import Hero from "./Components/Hero/Hero";
-import useLockScroll from "./Hooks/useLockScroll";
-import useMarginJump from "./Hooks/useMarginJump";
-import useScrollDirection from "./Hooks/useScrollDirection";
 
 function App() {
   const [loading, setLoading] = useState(true);

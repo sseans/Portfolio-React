@@ -95,7 +95,7 @@
   }
 }
 
-@media screen and (max-width: 891px) {
+@media screen and (max-width: 900px) {
   .hero-desc {
     width: 90%;
     font-size: 0.9rem;
@@ -107,18 +107,19 @@
 
   .hero-phrase {
     font-size: 3rem;
+    width: 90%;
   }
 }
 
 @media screen and (max-width: 810px) {
   .hero-phrase {
-    width: 105%;
+    width: 100%;
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 600px) {
   .hero-desc {
-    width: 120%;
+    width: 110%;
     font-size: 0.9rem;
   }
 
@@ -132,17 +133,17 @@
 
   .hero-phrase {
     font-size: 2.25rem;
-    width: 105%;
+    width: 90%;
   }
 }
 
-@media screen and (max-width: 475px) {
+@media screen and (max-width: 500px) {
   .hero-intro {
     font-size: 0.8rem;
   }
 
   .hero-desc {
-    width: 120%;
+    width: 110%;
   }
 
   .hero {
@@ -151,7 +152,7 @@
 
   .hero-phrase {
     font-size: 1.9rem;
-    width: 110%;
+    width: 90%;
   }
 
   .hero-name {
@@ -159,9 +160,36 @@
     width: 110%;
   }
 
-  .hero-button button {
-    width: 110px;
+  .herobutton {
+    width: 80px;
     height: 40px;
+  }
+
+  .hero-right-mobile {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .hero-phrase {
+    width: 110%;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .hero-name {
+    width: 100%;
+    font-size: 1.4rem;
+  }
+
+  .hero-intro {
+    font-size: 0.7rem;
+    width: 80%;
+  }
+
+  .hero-phrase {
+    font-size: 1.3rem;
   }
 }
 
@@ -190,6 +218,20 @@
   color: #fd586e;
   font-weight: 700;
   transition: all 200ms ease-in-out;
+}
+
+@media screen and (max-width: 500px) {
+  .hero-button button {
+    width: 80px;
+    height: 35px;
+    font-size: 0.8rem;
+    font-weight: 400;
+    border: #fd586e 1px solid;
+  }
+
+  .hero-right-mobile {
+    font-size: 3rem;
+  }
 }
 
 .hero-button button:hover {
@@ -231,8 +273,6 @@
   justify-content: center;
   align-items: center;
   font-size: 4rem;
-  cursor: pointer;
-  transition: all 900ms ease-in-out;
   position: relative;
   /* z-index: -1; */
 }
@@ -290,4 +330,30 @@
   width: 100%;
   height: 100%;
   border: yellow 1px solid;
+}
+
+.hero-right-mobile {
+  width: 50%;
+  color: #0d1f2d;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.5rem;
+  position: relative;
+}
+
+.skill-grid {
+  cursor: pointer;
+}
+
+.skill-grid:hover {
+  color: #5e2bff;
+  transform: scale(1.1);
+}
+
+@media screen and (max-height: 700px) {
+  .hero-right-mobile {
+    font-size: 2.5rem;
+  }
 }
