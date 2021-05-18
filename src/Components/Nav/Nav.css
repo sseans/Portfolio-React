@@ -11,10 +11,28 @@
   transition: box-shadow 200ms ease-in-out, backdrop-filter 200ms ease-in-out;
 }
 
+.nav::before {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background-color: #0d1f2d;
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+}
+
 .nav.glass {
   backdrop-filter: blur(6px);
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.03), 0 0 6px 6px rgba(0, 0, 0, 0.02),
     0 7px 7px rgba(0, 0, 0, 0.01), 0 8px 9px rgba(0, 0, 0, 0.01);
+}
+
+.nav.glass::before {
+  opacity: 0.8;
+  /* transition: background-color 300ms ease-in-out; */
 }
 
 .nav-wrapper {
@@ -122,6 +140,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.nav-button.glass {
+  color: white;
 }
 
 .nav-button svg {

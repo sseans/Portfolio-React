@@ -218,7 +218,11 @@ export default function Nav({ appRef }) {
                   <li key={x.title}>
                     <button
                       onClick={() => window.scrollTo(0, x.scroll)}
-                      className={x.className}
+                      className={
+                        dropDownState === null
+                          ? x.className
+                          : x.className + " glass"
+                      }
                     >
                       {x.className === "nav-resume-button" ? x.icon : null}
                       {x.title}

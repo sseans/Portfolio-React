@@ -12,4 +12,6 @@ export default function useLockScroll(lockStatus) {
       document.body.style.marginRight = `0px`;
     }
   }, [lockStatus, scrollWidth]);
+
+  return scrollWidth
 }
