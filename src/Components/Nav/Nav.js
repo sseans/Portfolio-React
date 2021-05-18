@@ -166,9 +166,15 @@ export default function Nav({ appRef }) {
                 }
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               >
-                <div className="span"></div>
-                <div className="span"></div>
-                <div className="span"></div>
+                <div
+                  className={dropDownState === null ? "span" : "span dropdown"}
+                ></div>
+                <div
+                  className={dropDownState === null ? "span" : "span dropdown"}
+                ></div>
+                <div
+                  className={dropDownState === null ? "span" : "span dropdown"}
+                ></div>
               </div>
               {/* Slide Out Mobile Menu */}
               <motion.div

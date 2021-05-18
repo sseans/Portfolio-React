@@ -21,7 +21,7 @@
   height: 150px;
   background-color: #0d1f2d;
   opacity: 0;
-  transition: opacity 200ms ease-in-out;
+  transition: all 250ms ease;
 }
 
 .nav.glass {
@@ -31,7 +31,7 @@
 }
 
 .nav.glass::before {
-  opacity: 0.8;
+  opacity: 0.75;
   /* transition: background-color 300ms ease-in-out; */
 }
 
@@ -300,6 +300,10 @@
   height: 3px;
   background-color: #0d1f2d;
   transition: all 200ms ease-in-out;
+}
+
+.span.dropdown {
+  background-color: white;
 }
 
 .nav-mobile-menu-hamburger :nth-child(2) {
