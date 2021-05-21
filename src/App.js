@@ -5,6 +5,7 @@ import PropagateLoader from "react-spinners/PropagateLoader";
 import { motion } from "framer-motion";
 import Hero from "./Components/Hero/Hero";
 import About from "./Components/About/About";
+import Projects from "./Components/Projects/Projects";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -58,6 +59,7 @@ function App() {
           </motion.div>
           <Hero />
           <About />
+          <Projects />
           <div className="tempcontent">boop</div>
         </>
       )}

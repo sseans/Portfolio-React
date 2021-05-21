@@ -168,7 +168,7 @@ export default function Hero() {
             >
               <FaVuejs />
             </motion.div>
-            <motion.div
+            {/* <motion.div
               initial={{
                 skew: 20,
                 height: 0,
@@ -181,7 +181,7 @@ export default function Hero() {
               className="hero-shape"
             >
               <FaNodeJs />
-            </motion.div>
+            </motion.div> */}
 
             <motion.div
               initial={{ opacity: 0 }}

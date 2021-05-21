@@ -1,13 +1,12 @@
 .hero {
   width: 100%;
-  height: 82.5vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 90px;
+  padding-top: 90px;
   position: relative;
   z-index: -1;
-  border: purple 1px solid;
 }
 
 .hero-wrapper {
@@ -16,7 +15,6 @@
   max-width: 1300px;
   max-height: 600px;
   display: flex;
-  border: yellow 1px solid;
 }
 
 .hero-left {
@@ -277,11 +275,13 @@
   font-size: 4rem;
   position: relative;
   /* z-index: -1; */
+  margin-right: 30px;
 }
 
 .hero-shape {
   width: 25%;
   min-width: 90px;
+  max-width: 120px;
   height: 90%;
   background-color: #fd586e;
   transform: skew(20deg);

@@ -1,0 +1,35 @@
+.projects {
+  width: 100%;
+  height: 650px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: -2;
+  background-color: #0c1c29;
+}
+
+.projects-wrapper {
+  width: 87.5%;
+  height: 100%;
+  max-width: 1300px;
+  max-height: 600px;
+  display: flex;
+}
+
+.projects-title {
+  color: #ece7dc;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100px;
+  margin: 10px 0;
+}
+
+.title-bar {
+  height: 3px;
+  width: 40px;
+  background: #5e2bff;
+}
