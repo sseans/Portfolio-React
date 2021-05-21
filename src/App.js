@@ -4,6 +4,7 @@ import Nav from "./Components/Nav/Nav";
 import PropagateLoader from "react-spinners/PropagateLoader";
 import { motion } from "framer-motion";
 import Hero from "./Components/Hero/Hero";
+import About from "./Components/About/About";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -56,6 +57,7 @@ function App() {
             <Nav appRef={appReference} />
           </motion.div>
           <Hero />
+          <About />
           <div className="tempcontent">boop</div>
         </>
       )}

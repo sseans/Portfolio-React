@@ -196,13 +196,18 @@
     rgba(253, 88, 110, 1) 0%,
     rgba(94, 43, 255, 1) 100%
   );
+  padding-top: 2px;
   /* -webkit-background-clip: text; */
   /* -webkit-text-fill-color: transparent; */
 }
 
+.nav-resume-button svg {
+  margin-top: -1px;
+}
+
 .nav-resume-button:hover {
   background-color: #fd586e;
-  color: #d3d3d3;
+  color: #0d1f2d;
 }
 
 /* Mobile Nav Menu Items */
