@@ -6,6 +6,8 @@ import { motion } from "framer-motion";
 import Hero from "./Components/Hero/Hero";
 import About from "./Components/About/About";
 import Projects from "./Components/Projects/Projects";
+import Footer from "./Components/Footer/Footer";
+import Experience from "./Components/Experience/Experience";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -60,7 +62,8 @@ function App() {
           <Hero />
           <About />
           <Projects />
-          <div className="tempcontent">boop</div>
+          <Experience />
+          <Footer />
         </>
       )}
     </div>
