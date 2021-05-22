@@ -230,7 +230,6 @@ export default function Nav({ appRef }) {
                           : x.className + " glass"
                       }
                     >
-                      {x.className === "nav-resume-button" ? x.icon : null}
                       {x.title}
                     </button>
                   </li>
