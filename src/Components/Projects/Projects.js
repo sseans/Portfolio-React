@@ -1,6 +1,7 @@
 import React from "react";
 import "./Projects.css";
 import movieFXStill from "../../Assets/MovieWebAppStill.JPG";
+import weatherAppStill from "../../Assets/WeatherWebAppStill.JPG";
 import { IoMdOpen } from "react-icons/io";
 import { FaGithub } from "react-icons/fa";
 
@@ -36,9 +37,9 @@ export default function Projects() {
           </div>
         </div>
         <div className="project-container">
-          <img className="project-image" src={movieFXStill} alt="MovieFX" />
+          <img className="project-image" src={weatherAppStill} alt="MovieFX" />
           <div className="project-info">
-            <div className="project-title">MovieFX</div>
+            <div className="project-title">WeatherFX</div>
             <div className="project-subtitle">Pure Vanilla Javascript.</div>
             <div className="project-desc">
               A Project to collate Movies and TV Shows from all different
