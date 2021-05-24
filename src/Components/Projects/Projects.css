@@ -7,7 +7,7 @@
   align-items: center;
   position: relative;
   z-index: -2;
-  background-color: #ece7dc;
+  background-color: #09151e;
 }
 
 .projects-wrapper {
@@ -19,7 +19,7 @@
 }
 
 .projects-title {
-  color: #0d1f2d;
+  color: #ece7dc;
   font-weight: 700;
   font-size: 1.1rem;
   cursor: pointer;
@@ -60,7 +60,6 @@
 .project-container:nth-child(even) .project-info {
   border-top-left-radius: 12.5px;
   border-bottom-left-radius: 12.5px;
-  border-bottom-right-radius: 0px;
   border-top-right-radius: 0px;
   margin-left: 0;
   margin-right: -20px;
@@ -116,7 +115,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 1.5px 1.5px rgba(0, 0, 0, 0.12),
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06), 0 1.5px 1.5px rgba(0, 0, 0, 0.08),
     0 3px 3px rgba(0, 0, 0, 0.12), 0 6px 6px rgba(0, 0, 0, 0.12),
     0 10px 10px rgba(0, 0, 0, 0.12);
 }
@@ -202,18 +201,9 @@
     margin-bottom: -15px;
   }
 
-  .project-container:nth-child(odd) .project-container {
+  .project-container:nth-child(even) {
     height: fit-content;
     flex-direction: column;
-    border: yellow 2px dashed;
-  }
-
-  .project-container:nth-child(even) .project-info {
-    border-bottom-left-radius: 12.5px;
-    border-bottom-right-radius: 12.5px;
-    border-top-right-radius: 0px;
-    margin-left: 0px;
-    margin-top: -20px;
   }
 
   .project-container:nth-child(even) .project-desc {
@@ -221,16 +211,26 @@
     height: fit-content;
   }
 
+  .project-container:nth-child(even) .project-info {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 12.5px;
+    border-bottom-right-radius: 12.5px;
+    border-top-right-radius: 0px;
+    margin-left: 0px;
+    margin-top: -20px;
+  }
+
   .project-container:nth-child(even) .project-links {
-    right: 0;
-    left: 0;
-    bottom: 0;
-    top: auto;
     margin-right: 0px;
-    margin-bottom: -15px;
     height: 30px;
     width: 90px;
     padding: 0px 9px;
     flex-direction: row;
+    margin: auto;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: auto;
+    margin-bottom: -15px;
   }
 }
