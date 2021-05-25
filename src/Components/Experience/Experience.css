@@ -12,7 +12,35 @@
 .experience-wrapper {
   width: 87.5%;
   height: 100%;
-  max-width: 1300px;
+  max-width: 1050px;
   max-height: 600px;
   display: flex;
+  flex-direction: column;
+}
+
+.experience-title {
+  color: #0d1f2d;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 152.5px;
+  margin: 10px 0;
+}
+
+.title-bar-experience {
+  height: 3px;
+  width: 40px;
+  background: #fd586e;
+}
+
+/* JOB */
+.job-container {
+  height: 467.5px;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 70px;
+  border: red 1px solid;
 }
