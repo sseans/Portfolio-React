@@ -16,11 +16,25 @@ function App() {
   const experienceRef = useRef(null);
 
   const executeScroll = (whichComponent) => {
+    let component;
+
     whichComponent === "about"
-      ? aboutRef.current.scrollIntoView({ behavior: "smooth", inline: "start" })
+      ? (component = aboutRef.current)
       : whichComponent === "projects"
-      ? projectsRef.current.scrollIntoView({ behavior: "smooth" })
-      : experienceRef.current.scrollIntoView({ behavior: "smooth" });
+      ? (component = projectsRef.current)
+      : whichComponent === "experience"
+      ? (component = experienceRef.current)
+      : (component = null);
+
+    let elementRect = component.getBoundingClientRect().top;
+    const bodyRect = document.body.getBoundingClientRect().top;
+    const elementPosition = elementRect - bodyRect;
+    const offsetPosition = elementPosition - 90;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
   };
 
   useEffect(() => {

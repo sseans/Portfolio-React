@@ -11,6 +11,7 @@ export default function Experience(props) {
           <div className="title-bar-experience"></div>
           Experience
         </div>
+        <h2>Where I'm Working...</h2>
         <div className="job-container">
           <div className="job-logo">
             <img src={secondsLogo} alt="8Secondz" className="logo" />
