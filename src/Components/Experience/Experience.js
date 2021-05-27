@@ -3,9 +3,9 @@ import "./Experience.css";
 import secondsLogo from "../../Assets/8_logo.png";
 import cactusLogo from "../../Assets/CactusCan2020_White.png";
 
-export default function Experience() {
+export default function Experience(props) {
   return (
-    <div className="experience">
+    <div className="experience" ref={props.refProp}>
       <div className="experience-wrapper">
         <div className="experience-title">
           <div className="title-bar-experience"></div>

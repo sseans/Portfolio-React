@@ -16,6 +16,7 @@ const menuItems = [
   {
     icon: <HiCode />,
     title: "Skills.",
+    referenceName: "about",
     scroll: "675",
     className: "nav-button",
     mobClassName: "nav-mobile-button",
@@ -23,13 +24,15 @@ const menuItems = [
   {
     icon: <FaProjectDiagram />,
     title: "Projects.",
-    scroll: "1500",
+    referenceName: "projects",
+    scroll: "1350",
     className: "nav-button",
     mobClassName: "nav-mobile-button",
   },
   {
     icon: <MdWork />,
     title: "Experience.",
+    referenceName: "experience",
     scroll: "2800",
     className: "nav-button",
     mobClassName: "nav-mobile-button",
@@ -55,7 +58,7 @@ const navAnimationVariants = {
   stay: { y: 0, opacity: 1 },
 };
 
-export default function Nav({ appRef }) {
+export default function Nav({ executeScroll }) {
   const [mobileMenuActive, setMobileMenuActive] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [dropDownState, setDropDownState] = useState(true);
@@ -197,7 +200,7 @@ export default function Nav({ appRef }) {
                       <li key={x.title}>
                         <button
                           onClick={() => {
-                            window.scrollTo(0, x.scroll);
+                            executeScroll(x.referenceName);
                             setTimeout(() => {
                               setMobileMenuOpen(!mobileMenuOpen);
                             }, 200);

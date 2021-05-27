@@ -5,7 +5,7 @@ import useWindowDimensions from "../../Hooks/useWindowDimensions";
 import { IoLogoJavascript } from "react-icons/io";
 import { FaReact, FaVuejs, FaGithub } from "react-icons/fa";
 
-export default function About() {
+export default function About(props) {
   const [mobileActive, setMobileActive] = useState();
 
   // Determines size of screen and which menu to show (Uses Custom Hook)
@@ -19,7 +19,7 @@ export default function About() {
   }, [width]);
 
   return (
-    <div className="about">
+    <div className="about" ref={props.refProp}>
       <div className="about-wrapper">
         <div className="about-info">
           <h1 className="about-title">

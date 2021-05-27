@@ -5,9 +5,9 @@ import weatherAppStill from "../../Assets/WeatherWebAppStill.JPG";
 import { IoMdOpen } from "react-icons/io";
 import { FaGithub } from "react-icons/fa";
 
-export default function Projects() {
+export default function Projects(props) {
   return (
-    <div className="projects">
+    <div className="projects" ref={props.refProp}>
       <div className="projects-wrapper">
         <div className="projects-title">
           <div className="title-bar-projects"></div>

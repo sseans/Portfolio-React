@@ -11,13 +11,17 @@ import Experience from "./Components/Experience/Experience";
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const [appReference, setAppReference] = useState();
+  const aboutRef = useRef(null);
+  const projectsRef = useRef(null);
+  const experienceRef = useRef(null);
 
-  const appRef = useRef();
-
-  useEffect(() => {
-    setAppReference(appRef);
-  }, []);
+  const executeScroll = (whichComponent) => {
+    whichComponent === "about"
+      ? aboutRef.current.scrollIntoView({ behavior: "smooth", inline: "start" })
+      : whichComponent === "projects"
+      ? projectsRef.current.scrollIntoView({ behavior: "smooth" })
+      : experienceRef.current.scrollIntoView({ behavior: "smooth" });
+  };
 
   useEffect(() => {
     setLoading(true);
@@ -27,11 +31,7 @@ function App() {
   }, []);
 
   return (
-    <div
-      style={{ overflow: loading ? "hidden" : "" }}
-      className="App"
-      ref={appRef}
-    >
+    <div style={{ overflow: loading ? "hidden" : "" }} className="App">
       <div className="BG"></div>
       {loading ? (
         <motion.div
@@ -57,12 +57,12 @@ function App() {
             animate={{ y: 0, opacity: 1 }}
             className="nav-animate-div"
           >
-            <Nav appRef={appReference} />
+            <Nav executeScroll={executeScroll} />
           </motion.div>
           <Hero />
-          <About />
-          <Projects />
-          <Experience />
+          <About refProp={aboutRef} />
+          <Projects refProp={projectsRef} />
+          <Experience refProp={experienceRef} />
           <Footer />
         </>
       )}
