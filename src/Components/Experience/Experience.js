@@ -17,7 +17,7 @@ export default function Experience() {
           </div>
           <div className="job-info">
             <div className="info-title">
-              Junior Software Engineer <span>Present</span>{" "}
+              Junior Software Engineer - 8Secondz
             </div>
             <div className="info-desc">
               My responsibilites include web development in a mainly frontend
@@ -36,10 +36,12 @@ export default function Experience() {
         </div>
         <div className="job-container">
           <div className="job-logo cactus">
-            <img src={cactusLogo} alt="8Secondz" className="logo" />
+            <img src={cactusLogo} alt="8Secondz" className="logo cactuslogo" />
           </div>
           <div className="job-info">
-            <div className="info-title">Digital Producer / Web Developer</div>
+            <div className="info-title">
+              Digital Producer / Web Developer - CactusCan
+            </div>
             <div className="info-desc">
               Coming onboard initially producing digital content, videos,
               editing, filming, minor graphic design. Over time my role changed

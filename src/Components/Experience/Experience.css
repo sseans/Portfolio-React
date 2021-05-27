@@ -6,7 +6,7 @@
   align-items: center;
   position: relative;
   z-index: -2;
-  background-color: #ece7dc;
+  background-color: #09151e;
 }
 
 .experience-wrapper {
@@ -20,7 +20,7 @@
 }
 
 .experience-title {
-  color: #0d1f2d;
+  color: white;
   font-weight: 700;
   font-size: 1.1rem;
   cursor: pointer;
@@ -34,7 +34,7 @@
 .title-bar-experience {
   height: 3px;
   width: 40px;
-  background: #fd586e;
+  background: #5e2bff;
 }
 
 /* JOB */
@@ -47,7 +47,11 @@
 
 .logo {
   cursor: pointer;
-  height: 250px;
+  height: 80px;
+}
+
+.cactuslogo {
+  height: 110px;
 }
 
 .job-logo {
@@ -69,7 +73,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 30px;
+  padding: 0 10px;
   text-align: left;
 }
 
@@ -79,20 +83,14 @@
   margin: 10px 0;
   font-weight: 700;
   font-size: 1.3rem;
-  color: #0d1f2d;
-}
-
-.info-title span {
-  padding: 0 2px;
-  border: 2px dashed #fd586e;
-  color: #fd586e;
+  color: white;
 }
 
 .info-desc {
   width: 100%;
   height: fit-content;
   margin: 10px 0;
-  color: #0d1f2d;
+  color: #ece7dc;
   font-size: 0.9rem;
 }
 
@@ -100,7 +98,7 @@
   width: 100%;
   height: fit-content;
   margin: 10px 0;
-  color: #fd586e;
+  color: #5e2bff;
   font-weight: 700;
   font-size: 0.9rem;
 }
