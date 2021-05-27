@@ -37,7 +37,7 @@ export default function Projects(props) {
           </div>
         </div>
         <div className="project-container">
-          <img className="project-image" src={weatherAppStill} alt="MovieFX" />
+          <img className="project-image" src={movieFXStill} alt="MovieFX" />
           <div className="project-info">
             <div className="project-title">WeatherFX</div>
             <div className="project-subtitle">Pure Vanilla Javascript.</div>

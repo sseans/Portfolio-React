@@ -1,12 +1,13 @@
 .about {
   width: 100%;
-  height: 80vh;
+  height: 60vh;
   min-height: 700px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   z-index: -1;
+  background-color: #fd586e;
 }
 
 .about-wrapper {

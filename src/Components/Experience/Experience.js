@@ -25,7 +25,7 @@ export default function Experience(props) {
               time
             </div>
             <div className="info-tech">
-              Vue JS - Javascript - Firebase - AWS
+              Vue JS - React JS - Javascript - Firebase - AWS
             </div>
           </div>
         </div>
