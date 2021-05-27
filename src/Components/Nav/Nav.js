@@ -84,6 +84,7 @@ export default function Nav({ executeScroll }) {
   // Determines scroll direction => If scrollD changes? sets (NavbarDropDown) state
   const scrollD = useScrollDirection();
   useEffect(() => {
+    console.log("scrollD :>> ", scrollD);
     if (scrollD === null) {
       setDropDownState(null);
     } else if (mobileMenuOpen === true) {
@@ -226,7 +227,12 @@ export default function Nav({ executeScroll }) {
                 return (
                   <li key={x.title}>
                     <button
-                      onClick={() => window.scrollTo(0, x.scroll)}
+                      onClick={() => {
+                        executeScroll(x.referenceName);
+                        setTimeout(() => {
+                          setDropDownState("stay");
+                        }, 100);
+                      }}
                       className={
                         dropDownState === null
                           ? x.className
