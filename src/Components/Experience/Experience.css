@@ -1,7 +1,7 @@
 .experience {
   width: 100%;
-  height: 650px;
   display: flex;
+  height: fit-content;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -10,10 +10,11 @@
 }
 
 .experience-wrapper {
+  margin: 50px 0;
   width: 87.5%;
   height: 100%;
   max-width: 1050px;
-  max-height: 600px;
+  max-height: fit-content;
   display: flex;
   flex-direction: column;
 }
@@ -27,7 +28,7 @@
   align-items: center;
   justify-content: space-between;
   width: 152.5px;
-  margin: 10px 0;
+  margin-bottom: 40px;
 }
 
 .title-bar-experience {
@@ -38,9 +39,86 @@
 
 /* JOB */
 .job-container {
-  height: 467.5px;
+  height: fit-content;
   width: 100%;
-  margin-top: 20px;
-  margin-bottom: 70px;
-  border: red 1px solid;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  cursor: pointer;
+  height: 250px;
+}
+
+.job-logo {
+  width: 20%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cactus {
+  height: 170px;
+  overflow: hidden;
+}
+
+.job-info {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 30px;
+  text-align: left;
+}
+
+.info-title {
+  width: 100%;
+  height: fit-content;
+  margin: 10px 0;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #0d1f2d;
+}
+
+.info-title span {
+  padding: 0 2px;
+  border: 2px dashed #fd586e;
+  color: #fd586e;
+}
+
+.info-desc {
+  width: 100%;
+  height: fit-content;
+  margin: 10px 0;
+  color: #0d1f2d;
+  font-size: 0.9rem;
+}
+
+.info-tech {
+  width: 100%;
+  height: fit-content;
+  margin: 10px 0;
+  color: #fd586e;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.job-line {
+  width: 100%;
+  height: 7.5vh;
+}
+
+.line {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.line-actual {
+  width: 2px;
+  height: 100%;
+  border: white 2px dashed;
 }
