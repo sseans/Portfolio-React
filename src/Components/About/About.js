@@ -23,6 +23,7 @@ export default function About(props) {
   const variants = {
     visible: {
       y: 0,
+
       opacity: 1,
       transition: { delayChilden: 10, staggerChildren: 5 },
     },
