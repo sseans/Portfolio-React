@@ -1,7 +1,7 @@
 import React from "react";
 import "./Projects.css";
 import movieFXStill from "../../Assets/MovieWebAppStill.JPG";
-import weatherAppStill from "../../Assets/WeatherWebAppStill.JPG";
+// import weatherAppStill from "../../Assets/WeatherWebAppStill.JPG";
 import { IoMdOpen } from "react-icons/io";
 import { FaGithub } from "react-icons/fa";
 

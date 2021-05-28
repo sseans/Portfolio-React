@@ -9,8 +9,8 @@ export default function Footer() {
         <div className="footer-desc">
           Shoot me an email if you want to get in touch, lets build something.
         </div>
-        <button className="footer-button">Next?</button>
         <div className="email">s.seanseale@gmail.com</div>
+        <button className="footer-button">Next?</button>
       </div>
     </div>
   );
