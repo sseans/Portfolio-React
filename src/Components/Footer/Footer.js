@@ -5,10 +5,12 @@ export default function Footer() {
   return (
     <div className="footer">
       <div className="footer-wrapper">
-        <div className="footer-title">
-          <div className="title-bar-footer"></div>
-          Footer
+        <div className="footer-title">Contact Me!</div>
+        <div className="footer-desc">
+          Shoot me an email if you want to get in touch, lets build something.
         </div>
+        <button className="footer-button">Next?</button>
+        <div className="email">s.seanseale@gmail.com</div>
       </div>
     </div>
   );
