@@ -11,6 +11,7 @@ import { IoMdMail } from "react-icons/io";
 import { motion, useAnimation } from "framer-motion";
 import useLockScroll from "../../Hooks/useLockScroll";
 import useScrollDirection from "../../Hooks/useScrollDirection";
+import Pdf from "../../Assets/Resume 2021 - May.pdf";
 
 const menuItems = [
   {
@@ -203,21 +204,32 @@ export default function Nav({ executeScroll }) {
                   {menuItems.map((x) => {
                     return (
                       <li key={x.title}>
-                        <button
-                          onClick={() => {
-                            executeScroll(x.referenceName);
-                            setTimeout(() => {
-                              setMobileMenuOpen(!mobileMenuOpen);
-                            }, 200);
-                            setDropDownState("stay");
-                          }}
-                          className={x.mobClassName}
-                        >
-                          {x.mobClassName === "nav-mobile-resume-button"
-                            ? x.icon
-                            : null}
-                          {x.title}
-                        </button>
+                        {x.title !== "Resume" ? (
+                          <button
+                            onClick={() => {
+                              executeScroll(x.referenceName);
+                              setTimeout(() => {
+                                setMobileMenuOpen(!mobileMenuOpen);
+                              }, 200);
+                              setDropDownState("stay");
+                            }}
+                            className={x.mobClassName}
+                          >
+                            {x.mobClassName === "nav-mobile-resume-button"
+                              ? x.icon
+                              : null}
+                            {x.title}
+                          </button>
+                        ) : (
+                          <a
+                            href={Pdf}
+                            target="_blank"
+                            rel="noreferrer"
+                            className={x.mobClassName}
+                          >
+                            {x.title}
+                          </a>
+                        )}
                       </li>
                     );
                   })}
@@ -230,21 +242,32 @@ export default function Nav({ executeScroll }) {
               {menuItems.map((x) => {
                 return (
                   <li key={x.title}>
-                    <button
-                      onClick={() => {
-                        executeScroll(x.referenceName);
-                        setTimeout(() => {
-                          setDropDownState("stay");
-                        }, 100);
-                      }}
-                      className={
-                        dropDownState === null
-                          ? x.className
-                          : x.className + " glass"
-                      }
-                    >
-                      {x.title}
-                    </button>
+                    {x.title !== "Resume" ? (
+                      <button
+                        onClick={() => {
+                          executeScroll(x.referenceName);
+                          setTimeout(() => {
+                            setDropDownState("stay");
+                          }, 100);
+                        }}
+                        className={
+                          dropDownState === null
+                            ? x.className
+                            : x.className + " glass"
+                        }
+                      >
+                        {x.title}
+                      </button>
+                    ) : (
+                      <a
+                        href={Pdf}
+                        target="_blank"
+                        rel="noreferrer"
+                        className={x.className}
+                      >
+                        {x.title}
+                      </a>
+                    )}
                   </li>
                 );
               })}

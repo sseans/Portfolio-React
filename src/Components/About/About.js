@@ -12,7 +12,7 @@ export default function About(props) {
 
   // Animation functions for scroll reveal
   const animation = useAnimation();
-  const [ref, inView, entry] = useInView({ threshold: 0.1 });
+  const [ref, inView, entry] = useInView({ threshold: 0.15 });
 
   useEffect(() => {
     if (inView) {

@@ -9,7 +9,7 @@ import { motion, useAnimation } from "framer-motion";
 export default function Projects(props) {
   // Animation functions for scroll reveal
   const animation = useAnimation();
-  const [ref, inView, entry] = useInView({ threshold: 0.1 });
+  const [ref, inView, entry] = useInView({ threshold: 0.2 });
 
   useEffect(() => {
     if (inView) {
