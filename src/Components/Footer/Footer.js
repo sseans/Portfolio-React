@@ -1,6 +1,5 @@
 import React from "react";
 import "./Footer.css";
-import { IoIosArrowDown } from "react-icons/io";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 
