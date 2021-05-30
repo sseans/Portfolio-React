@@ -130,8 +130,10 @@
     0 10px 10px rgba(0, 0, 0, 0.12);
 }
 
-.project-links svg {
+.project-links a svg {
   cursor: pointer;
+  color: white;
+  margin-top: 5px;
 }
 
 .project-title {

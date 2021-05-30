@@ -1,20 +1,95 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Projects.css";
 import movieFXStill from "../../Assets/MovieWebAppStill.JPG";
-// import weatherAppStill from "../../Assets/WeatherWebAppStill.JPG";
 import { IoMdOpen } from "react-icons/io";
 import { FaGithub } from "react-icons/fa";
+import { useInView } from "react-intersection-observer";
+import { motion, useAnimation } from "framer-motion";
 
 export default function Projects(props) {
+  // Animation functions for scroll reveal
+  const animation = useAnimation();
+  const [ref, inView, entry] = useInView({ threshold: 0.1 });
+
+  useEffect(() => {
+    if (inView) {
+      animation.start("visible");
+    }
+  }, [animation, inView]);
+
+  const variants = {
+    visible: {
+      y: 0,
+
+      opacity: 1,
+      transition: { delayChilden: 10, staggerChildren: 5 },
+    },
+    hidden: {
+      y: entry,
+      opacity: 0,
+    },
+  };
+
+  const itemA = {
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { delay: 0.3 },
+    },
+    hidden: {
+      y: 100,
+      opacity: 0,
+    },
+  };
+  const itemB = {
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { delay: 0.8 },
+    },
+    hidden: {
+      y: 100,
+      opacity: 0,
+    },
+  };
+  const itemC = {
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { delay: 1.9 },
+    },
+    hidden: {
+      y: 100,
+      opacity: 0,
+    },
+  };
+  const itemD = {
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { delay: 2.8 },
+    },
+    hidden: {
+      y: 100,
+      opacity: 0,
+    },
+  };
+
   return (
     <div className="projects" ref={props.refProp}>
-      <div className="projects-wrapper">
-        <div className="projects-title">
+      <motion.div
+        animate={animation}
+        initial="hidden"
+        variants={variants}
+        ref={ref}
+        className="projects-wrapper"
+      >
+        <motion.div variants={itemA} className="projects-title">
           <div className="title-bar-projects"></div>
           Projects
-        </div>
+        </motion.div>
         <h2>What I've been doing...</h2>
-        <div className="project-container">
+        <motion.div variants={itemB} className="project-container">
           <img className="project-image" src={movieFXStill} alt="MovieFX" />
           <div className="project-info">
             <div className="project-title">MovieFX</div>
@@ -31,12 +106,28 @@ export default function Projects(props) {
             </div>
             <div className="project-tech">Vanilla JS - Sass - Fetch</div>
             <div className="project-links">
-              <FaGithub />
-              <IoMdOpen />
+              <a
+                style={{ display: "table-cell" }}
+                href="https://github.com/sseans"
+                target="_blank"
+                className="project-links-a"
+                rel="noopener noreferrer"
+              >
+                <FaGithub />
+              </a>
+              <a
+                style={{ display: "table-cell" }}
+                href="https://github.com/sseans"
+                target="_blank"
+                className="project-links-a"
+                rel="noopener noreferrer"
+              >
+                <IoMdOpen />
+              </a>
             </div>
           </div>
-        </div>
-        <div className="project-container">
+        </motion.div>
+        <motion.div variants={itemC} className="project-container">
           <img className="project-image" src={movieFXStill} alt="MovieFX" />
           <div className="project-info">
             <div className="project-title">WeatherFX</div>
@@ -57,8 +148,8 @@ export default function Projects(props) {
               <IoMdOpen />
             </div>
           </div>
-        </div>
-        <div className="project-container">
+        </motion.div>
+        <motion.div variants={itemD} className="project-container">
           <img className="project-image" src={movieFXStill} alt="MovieFX" />
           <div className="project-info">
             <div className="project-title">MovieFX</div>
@@ -79,8 +170,8 @@ export default function Projects(props) {
               <IoMdOpen />
             </div>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 }

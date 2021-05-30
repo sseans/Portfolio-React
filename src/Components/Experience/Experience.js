@@ -1,18 +1,105 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Experience.css";
 import secondsLogo from "../../Assets/8_logo.png";
 import cactusLogo from "../../Assets/CactusCan2020_White.png";
+import { useInView } from "react-intersection-observer";
+import { motion, useAnimation } from "framer-motion";
 
 export default function Experience(props) {
+  // Animation functions for scroll reveal
+  const animation = useAnimation();
+  const [ref, inView, entry] = useInView({ threshold: 0.1 });
+
+  useEffect(() => {
+    if (inView) {
+      animation.start("visible");
+    }
+  }, [animation, inView]);
+
+  const variants = {
+    visible: {
+      y: 0,
+
+      opacity: 1,
+      transition: { delayChilden: 10, staggerChildren: 5 },
+    },
+    hidden: {
+      y: entry,
+      opacity: 0,
+    },
+  };
+
+  const itemA = {
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { delay: 0.2 },
+    },
+    hidden: {
+      y: 100,
+      opacity: 0,
+    },
+  };
+  const itemB = {
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { delay: 0.6 },
+    },
+    hidden: {
+      y: 100,
+      opacity: 0,
+    },
+  };
+  const itemC = {
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { delay: 1 },
+    },
+    hidden: {
+      y: 100,
+      opacity: 0,
+    },
+  };
+  const itemD = {
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { delay: 1.4 },
+    },
+    hidden: {
+      y: 100,
+      opacity: 0,
+    },
+  };
+  const itemE = {
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { delay: 1.6 },
+    },
+    hidden: {
+      y: 100,
+      opacity: 0,
+    },
+  };
+
   return (
     <div className="experience" ref={props.refProp}>
-      <div className="experience-wrapper">
-        <div className="experience-title">
+      <motion.div
+        ref={ref}
+        animate={animation}
+        initial="hidden"
+        variants={variants}
+        className="experience-wrapper"
+      >
+        <motion.div variants={itemA} className="experience-title">
           <div className="title-bar-experience"></div>
           Experience
-        </div>
-        <h2>Where I'm Working...</h2>
-        <div className="job-container">
+        </motion.div>
+        <motion.h2 variants={itemB}>Where I'm Working...</motion.h2>
+        <motion.div variants={itemC} className="job-container">
           <div className="job-logo">
             <img src={secondsLogo} alt="8Secondz" className="logo" />
           </div>
@@ -29,13 +116,13 @@ export default function Experience(props) {
               Vue JS - React JS - Javascript - Firebase - AWS
             </div>
           </div>
-        </div>
-        <div className="job-line">
+        </motion.div>
+        <motion.div variants={itemD} className="job-line">
           <div className="line">
             <div className="line-actual"></div>
           </div>
-        </div>
-        <div className="job-container">
+        </motion.div>
+        <motion.div variants={itemE} className="job-container">
           <div className="job-logo cactus">
             <img src={cactusLogo} alt="8Secondz" className="logo cactuslogo" />
           </div>
@@ -52,8 +139,8 @@ export default function Experience(props) {
               Adobe Creative Suite - WordPress - Javascript
             </div>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 }

@@ -160,7 +160,7 @@
     width: 110%;
   }
 
-  .herobutton {
+  .hero-button-inner {
     width: 80px;
     height: 40px;
   }
@@ -196,13 +196,14 @@
 .hero-button {
   width: 100%;
   text-align: left;
+  margin-top: 10px;
 }
 
-.hero-button button {
+.hero-button-inner {
   margin: 5px 0px;
   width: 150px;
-  height: 50px;
   background-color: transparent;
+  text-decoration: none;
   border: #fd586e 2px solid;
   border-radius: 5px;
   cursor: pointer;
@@ -218,10 +219,11 @@
   color: #fd586e;
   font-weight: 700;
   transition: all 200ms ease-in-out;
+  padding: 10px;
 }
 
 @media screen and (max-width: 500px) {
-  .hero-button button {
+  .hero-button-inner {
     width: 80px;
     height: 35px;
     font-size: 0.8rem;
@@ -234,7 +236,7 @@
   }
 }
 
-.hero-button button:hover {
+.hero-button-inner:hover {
   border: transparent;
   background: linear-gradient(
     90deg,

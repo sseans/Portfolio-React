@@ -432,20 +432,26 @@
 .nav-mobile-menu-contact {
   position: absolute;
   bottom: 33px;
-  display: flex;
-  align-items: center;
   cursor: pointer;
-  transition: all 200ms ease-in-out;
   font-weight: 700;
 }
 
-.nav-mobile-menu-contact:hover {
+.nav-button-inner:hover {
   color: white;
 }
 
 .nav-mobile-menu-contact svg {
   margin-right: 2px;
   margin-bottom: 1px;
+}
+
+.nav-button-inner {
+  transition: all 200ms ease-in-out;
+  text-decoration: none;
+  color: #fd586e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Nav mobile menu backdrop */
@@ -467,4 +473,10 @@
   filter: blur(2px);
   backdrop-filter: blur(2px);
   /* background-size: cover; */
+}
+
+@media screen and (max-width: 500px) {
+  .nav-mobile-menu-contact {
+    bottom: 75px;
+  }
 }

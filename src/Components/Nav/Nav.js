@@ -84,7 +84,6 @@ export default function Nav({ executeScroll }) {
   // Determines scroll direction => If scrollD changes? sets (NavbarDropDown) state
   const scrollD = useScrollDirection();
   useEffect(() => {
-    console.log("scrollD :>> ", scrollD);
     if (scrollD === null) {
       setDropDownState(null);
     } else if (mobileMenuOpen === true) {
@@ -193,8 +192,13 @@ export default function Nav({ executeScroll }) {
               >
                 <ul className="nav-mobile-menu">
                   <div className="nav-mobile-menu-contact">
-                    <IoMdMail />
-                    Contact me!
+                    <a
+                      className="nav-button-inner"
+                      href="mailto:s.seanseale@gmail.com"
+                    >
+                      <IoMdMail />
+                      Contact Me
+                    </a>
                   </div>
                   {menuItems.map((x) => {
                     return (

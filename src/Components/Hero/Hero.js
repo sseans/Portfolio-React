@@ -86,7 +86,12 @@ export default function Hero() {
             animate={{ y: 0, opacity: 1, transition: { delay: 0.5 } }}
             className="hero-button"
           >
-            <button>Contact Me</button>
+            <a
+              className="hero-button-inner"
+              href="mailto:s.seanseale@gmail.com"
+            >
+              Contact Me
+            </a>
           </motion.div>
         </div>
         {mobileHero === true ? (
