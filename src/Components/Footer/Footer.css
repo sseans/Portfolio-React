@@ -66,6 +66,17 @@
   margin-bottom: 20px;
 }
 
+.footer-madeby {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 0.6rem;
+  color: #ece7dc;
+}
+
 @media screen and (max-width: 600px) {
   .footer-title {
     font-size: 3rem;
