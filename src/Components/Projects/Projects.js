@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./Projects.css";
 import movieFXStill from "../../Assets/MovieWebAppStill.JPG";
+import portfolioStill from "../../Assets/portfolio.JPG";
 import { IoMdOpen } from "react-icons/io";
 import { FaGithub } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
@@ -128,21 +129,21 @@ export default function Projects(props) {
           </div>
         </motion.div>
         <motion.div variants={itemC} className="project-container">
-          <img className="project-image" src={movieFXStill} alt="MovieFX" />
+          <img className="project-image" src={portfolioStill} alt="MovieFX" />
           <div className="project-info">
-            <div className="project-title">WeatherFX</div>
-            <div className="project-subtitle">Pure Vanilla Javascript.</div>
+            <div className="project-title">This Portfolio!</div>
+            <div className="project-subtitle">React JS</div>
             <div className="project-desc">
-              A Project to collate Movies and TV Shows from all different
-              streaming platforms using the IMDb API to pull ratings,
-              suggestions, descriptions, poster art and more...
+              A premade portfolio? No thanks! Built in react and fully mobile
+              responsive. I've tried to really show who i am as a developer and
+              give it a little bit of my design touch.
               <br />
               <br />
-              The purpose of this project was to extend my skills in vanilla
-              javascript without relying on the tools of a framework, as helpful
-              as they may be.
+              Hopefully you're enjoying it right now!
             </div>
-            <div className="project-tech">Vanilla JS - Sass - Fetch</div>
+            <div className="project-tech">
+              React JS - Framer Motion - React Router
+            </div>
             <div className="project-links">
               <FaGithub />
               <IoMdOpen />
