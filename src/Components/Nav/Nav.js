@@ -53,8 +53,8 @@ const animationVariants = {
 };
 
 const navAnimationVariants = {
-  active: { y: 0, opacity: 1 },
-  inactive: { y: -120, opacity: 1 },
+  active: { y: 60, opacity: 1 },
+  inactive: { y: -90, opacity: 1 },
   topPosition: { opacity: 1 },
   stay: { y: 0, opacity: 1 },
 };
@@ -185,11 +185,7 @@ export default function Nav({ executeScroll }) {
                 variants={animationVariants}
                 animate={controls}
                 initial={{ opacity: 0 }}
-                className={
-                  dropDownState !== null
-                    ? "nav-mobile-menu-container"
-                    : "nav-mobile-menu-container glass"
-                }
+                className="nav-mobile-menu-container"
               >
                 <ul className="nav-mobile-menu">
                   <div className="nav-mobile-menu-contact">
@@ -211,7 +207,7 @@ export default function Nav({ executeScroll }) {
                               setTimeout(() => {
                                 setMobileMenuOpen(!mobileMenuOpen);
                               }, 200);
-                              setDropDownState("stay");
+                              setDropDownState(true);
                             }}
                             className={x.mobClassName}
                           >
@@ -247,7 +243,7 @@ export default function Nav({ executeScroll }) {
                         onClick={() => {
                           executeScroll(x.referenceName);
                           setTimeout(() => {
-                            setDropDownState("stay");
+                            setDropDownState(true);
                           }, 100);
                         }}
                         className={
