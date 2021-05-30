@@ -89,13 +89,14 @@
 
 .project-info {
   background-color: #0c1b27;
-  width: 100%;
+  /* width: 100%; */
   height: 100%;
   position: relative;
   border-top-right-radius: 7px;
   border-bottom-right-radius: 7px;
   margin-left: -20px;
   display: flex;
+  flex-shrink: 4;
   flex-direction: column;
   justify-content: space-between;
   padding: 15px 25px;
