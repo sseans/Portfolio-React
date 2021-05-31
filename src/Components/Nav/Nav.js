@@ -244,7 +244,7 @@ export default function Nav({ executeScroll }) {
                           executeScroll(x.referenceName);
                           setTimeout(() => {
                             setDropDownState(true);
-                          }, 100);
+                          }, 20);
                         }}
                         className={
                           dropDownState === null
