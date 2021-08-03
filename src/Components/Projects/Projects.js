@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "./Projects.css";
 import movieFXStill from "../../Assets/MovieWebAppStill.JPG";
 import portfolioStill from "../../Assets/portfolio.JPG";
+import spotifyStill from "../../Assets/SpotifyWebApp.JPG";
 import { IoMdOpen } from "react-icons/io";
 import { FaGithub } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
@@ -145,30 +146,65 @@ export default function Projects(props) {
               React JS - Framer Motion - React Router
             </div>
             <div className="project-links">
-              <FaGithub />
-              <IoMdOpen />
+              <a
+                style={{ display: "table-cell" }}
+                href="https://github.com/sseans"
+                target="_blank"
+                className="project-links-a"
+                rel="noopener noreferrer"
+              >
+                <FaGithub />
+              </a>
+              <a
+                style={{ display: "table-cell" }}
+                href="https://github.com/sseans"
+                target="_blank"
+                className="project-links-a"
+                rel="noopener noreferrer"
+              >
+                <IoMdOpen />
+              </a>
             </div>
           </div>
         </motion.div>
         <motion.div variants={itemD} className="project-container">
-          <img className="project-image" src={movieFXStill} alt="MovieFX" />
+          <img className="project-image" src={spotifyStill} alt="MovieFX" />
           <div className="project-info">
-            <div className="project-title">MovieFX</div>
-            <div className="project-subtitle">Pure Vanilla Javascript.</div>
+            <div className="project-title">Musico</div>
+            <div className="project-subtitle">React + Styled Components.</div>
             <div className="project-desc">
-              A Project to collate Movies and TV Shows from all different
-              streaming platforms using the IMDb API to pull ratings,
-              suggestions, descriptions, poster art and more...
+              Musico Log's in through the spotify API, it pulls information like
+              your top played tracks and artists so that you can create new
+              custom playlists based on your most listened music!
               <br />
               <br />
-              The purpose of this project was to extend my skills in vanilla
-              javascript without relying on the tools of a framework, as helpful
-              as they may be.
+              Play tracks, Like tracks or view different source ranges, e.g top
+              tracks of the last few weeks or of all time! Unfortunately due to
+              spotify changing its API policy recently, you must apply to test
+              out this web app.
             </div>
-            <div className="project-tech">Vanilla JS - Sass - Fetch</div>
+            <div className="project-tech">
+              React JS - Styled Components - Express
+            </div>
             <div className="project-links">
-              <FaGithub />
-              <IoMdOpen />
+              <a
+                style={{ display: "table-cell" }}
+                href="https://github.com/sseans"
+                target="_blank"
+                className="project-links-a"
+                rel="noopener noreferrer"
+              >
+                <FaGithub />
+              </a>
+              <a
+                style={{ display: "table-cell" }}
+                href="https://github.com/sseans"
+                target="_blank"
+                className="project-links-a"
+                rel="noopener noreferrer"
+              >
+                <IoMdOpen />
+              </a>
             </div>
           </div>
         </motion.div>
