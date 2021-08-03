@@ -110,7 +110,7 @@ export default function Projects(props) {
             <div className="project-links">
               <a
                 style={{ display: "table-cell" }}
-                href="https://github.com/sseans"
+                href="https://github.com/sseans/jsMovies"
                 target="_blank"
                 className="project-links-a"
                 rel="noopener noreferrer"
@@ -119,7 +119,7 @@ export default function Projects(props) {
               </a>
               <a
                 style={{ display: "table-cell" }}
-                href="https://github.com/sseans"
+                href="https://sseans.github.io/jsMovies/"
                 target="_blank"
                 className="project-links-a"
                 rel="noopener noreferrer"
@@ -148,7 +148,7 @@ export default function Projects(props) {
             <div className="project-links">
               <a
                 style={{ display: "table-cell" }}
-                href="https://github.com/sseans"
+                href="https://github.com/sseans/Portfolio-React"
                 target="_blank"
                 className="project-links-a"
                 rel="noopener noreferrer"
@@ -157,7 +157,7 @@ export default function Projects(props) {
               </a>
               <a
                 style={{ display: "table-cell" }}
-                href="https://github.com/sseans"
+                href="https://www.seanseale.com/"
                 target="_blank"
                 className="project-links-a"
                 rel="noopener noreferrer"
@@ -189,7 +189,7 @@ export default function Projects(props) {
             <div className="project-links">
               <a
                 style={{ display: "table-cell" }}
-                href="https://github.com/sseans"
+                href="https://github.com/sseans/Spotify-API-ReactApp"
                 target="_blank"
                 className="project-links-a"
                 rel="noopener noreferrer"
@@ -198,7 +198,7 @@ export default function Projects(props) {
               </a>
               <a
                 style={{ display: "table-cell" }}
-                href="https://github.com/sseans"
+                href="https://musico-web-app.herokuapp.com/"
                 target="_blank"
                 className="project-links-a"
                 rel="noopener noreferrer"
