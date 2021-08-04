@@ -11,7 +11,7 @@ import { IoMdMail } from "react-icons/io";
 import { motion, useAnimation } from "framer-motion";
 import useLockScroll from "../../Hooks/useLockScroll";
 import useScrollDirection from "../../Hooks/useScrollDirection";
-import Pdf from "../../Assets/Resume 2021 - May.pdf";
+import Pdf from "../../Assets/Resume 2021.pdf";
 
 const menuItems = [
   {
