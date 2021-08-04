@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./Projects.css";
 import movieFXStill from "../../Assets/MovieWebAppStill.JPG";
-import portfolioStill from "../../Assets/portfolio.JPG";
+import portfolioStill from "../../Assets/PortfolioZoomStill4.JPG";
 import spotifyStill from "../../Assets/SpotifyWebApp.JPG";
 import { IoMdOpen } from "react-icons/io";
 import { FaGithub } from "react-icons/fa";
